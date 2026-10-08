@@ -159,6 +159,10 @@ export const projects: Project[] = [
     tech: ["Sonar", "Near-infrared", "Object detection", "Python", "Data augmentation"],
     areas: ["cv", "autonomy"],
     planet: { from: "#8fd3ff", to: "#0b3d7a", ring: "#5ab0ff" },
+    links: [
+      { label: "Sonar paper (IEEE)", href: "https://ieeexplore.ieee.org/abstract/document/10500768" },
+      { label: "Near-infrared paper (IEEE)", href: "https://ieeexplore.ieee.org/abstract/document/10500797" },
+    ],
   },
   {
     id: "reactor-ml-thesis",
@@ -200,6 +204,7 @@ export const publications: Publication[] = [
     venue: "IEEE i-COSTE 2023, pp. 1–5",
     year: 2023,
     areas: ["cv", "autonomy"],
+    url: "https://ieeexplore.ieee.org/abstract/document/10500768",
   },
   {
     id: "pub-nir-asv",
@@ -209,6 +214,7 @@ export const publications: Publication[] = [
     venue: "IEEE i-COSTE 2023, pp. 1–6",
     year: 2023,
     areas: ["cv", "autonomy"],
+    url: "https://ieeexplore.ieee.org/abstract/document/10500797",
   },
 ];
 

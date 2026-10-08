@@ -132,6 +132,16 @@ export function Recognition() {
             >
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">{p.venue.split(",")[0]}</p>
               <h3 className="mt-4 leading-snug text-fg/95">{p.title}</h3>
+              {p.url && (
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-accent transition hover:border-accent hover:bg-accent/20"
+                >
+                  Read on IEEE Xplore <span aria-hidden="true">↗</span>
+                </a>
+              )}
               <div className="mt-auto flex items-center gap-3 pt-8">
                 <span className="grid size-9 shrink-0 place-items-center rounded-full border border-line font-mono text-[10px] text-muted">
                   Paper

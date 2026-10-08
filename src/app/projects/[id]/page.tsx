@@ -79,18 +79,23 @@ export default async function ProjectPage({ params }: PageProps<"/projects/[id]"
               {t}
             </span>
           ))}
-          {p.links?.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              target="_blank"
-              rel="noopener"
-              className="ml-auto text-sm text-accent hover:underline"
-            >
-              {l.label} ↗
-            </a>
-          ))}
         </div>
+
+        {p.links && (
+          <div className="mt-6 flex flex-wrap gap-3">
+            {p.links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                target="_blank"
+                rel="noopener"
+                className="inline-flex items-center gap-2 rounded-xl border border-accent/40 bg-accent/10 px-4 py-2.5 text-sm text-fg transition hover:border-accent hover:bg-accent/20"
+              >
+                {l.label} <span aria-hidden="true" className="text-accent">↗</span>
+              </a>
+            ))}
+          </div>
+        )}
 
         <Link
           href={`/projects/${next.id}/`}
