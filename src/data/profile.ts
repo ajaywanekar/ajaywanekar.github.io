@@ -35,7 +35,7 @@ export const hello = {
 };
 
 export const statement =
-  "From raw sensor signals to systems that see, understand and act — built on careful data, rigorous evaluation, and models that hold up in the real world.";
+  "I engineer computer vision, vision-language and agentic AI — taking sensor data through fine-tuned models to systems that perceive, reason and act — and lead that work from plan to delivery.";
 
 export const areas: { id: AreaId; label: string; color: string; tags: string[] }[] = [
   { id: "cv", label: "Computer Vision", color: "#5ab0ff", tags: ["Detection", "Tracking", "Re-identification"] },

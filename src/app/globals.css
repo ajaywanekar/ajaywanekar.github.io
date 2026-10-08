@@ -44,13 +44,17 @@ body {
 
 /* ---------- Earth on the hero horizon ---------- */
 
-.earth {
+.earth-wrap {
   position: absolute;
   left: 50%;
   top: 74svh;
   width: max(125vw, 980px);
   aspect-ratio: 1;
   translate: -50% 0;
+}
+.earth {
+  position: absolute;
+  inset: 0;
   border-radius: 50%;
   overflow: hidden;
   background: radial-gradient(circle at 50% 0%, #7db4ff 0%, #3a7ae0 7%, #1b4fa3 18%, #0c2a63 34%, #060d24 52%, #04050b 70%);
@@ -59,35 +63,63 @@ body {
     0 0 220px 70px rgb(60 110 255 / 0.16),
     inset 0 28px 70px rgb(170 215 255 / 0.45);
 }
-/* Continents and clouds are single (untiled) noise textures that rotate
-   around the planet's centre, so there are no seams. */
-.earth-land,
-.earth-clouds {
+/* Thin bright atmosphere rim with a soft haze just beyond the limb. */
+.earth-atmo {
+  position: absolute;
+  inset: -3%;
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side, transparent 93%, rgb(190 228 255 / 0.95) 94.4%, rgb(110 170 255 / 0.45) 95.6%, rgb(70 130 255 / 0.12) 98%, transparent 100%);
+}
+/* Surface layers are single (untiled) noise textures that rotate around the
+   planet's centre, so there are no seams. Land, clouds and city lights all
+   derive from the same continent noise, so they stay aligned. */
+.earth-layer {
   position: absolute;
   inset: 0;
   background-size: 100% 100%;
   animation: earth-spin 700s linear infinite;
+  will-change: transform;
 }
 .earth-land {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='l'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004' numOctaves='5' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0.24 0 0 0 0 0.6 0 0 0 0 0.28 9 0 0 0 -4.7'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23l)'/%3E%3C/svg%3E");
-  opacity: 0.75;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='s' filterUnits='userSpaceOnUse' x='0' y='0' width='1200' height='1200'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004' numOctaves='5' seed='11' result='n'/%3E%3CfeColorMatrix in='n' values='0 0 0 0 0.3 0 0 0 0 0.78 0 0 0 0 0.86 6 0 0 0 -2.7'/%3E%3C/filter%3E%3Cfilter id='l' filterUnits='userSpaceOnUse' x='0' y='0' width='1200' height='1200'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004' numOctaves='5' seed='11' result='n'/%3E%3CfeColorMatrix in='n' values='0 0 0 0 0.2 0 0 0 0 0.5 0 0 0 0 0.22 12 0 0 0 -6.24'/%3E%3C/filter%3E%3Cfilter id='f' filterUnits='userSpaceOnUse' x='0' y='0' width='1200' height='1200'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004' numOctaves='5' seed='11' result='n'/%3E%3CfeColorMatrix in='n' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 0 0 0 -6.24' result='land'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.012' numOctaves='3' seed='8' result='m'/%3E%3CfeColorMatrix in='m' values='0 0 0 0 0.09 0 0 0 0 0.3 0 0 0 0 0.15 7 0 0 0 -3.5' result='c'/%3E%3CfeComposite in='c' in2='land' operator='in'/%3E%3C/filter%3E%3Cfilter id='d' filterUnits='userSpaceOnUse' x='0' y='0' width='1200' height='1200'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004' numOctaves='5' seed='11' result='n'/%3E%3CfeColorMatrix in='n' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 0 0 0 -6.24' result='land'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.008' numOctaves='3' seed='4' result='m'/%3E%3CfeColorMatrix in='m' values='0 0 0 0 0.76 0 0 0 0 0.62 0 0 0 0 0.4 8 0 0 0 -4.5' result='c'/%3E%3CfeComposite in='c' in2='land' operator='in'/%3E%3C/filter%3E%3Cfilter id='w' filterUnits='userSpaceOnUse' x='0' y='0' width='1200' height='1200'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004' numOctaves='5' seed='11' result='n'/%3E%3CfeColorMatrix in='n' values='0 0 0 0 0.93 0 0 0 0 0.96 0 0 0 0 1 14 0 0 0 -9.6'/%3E%3C/filter%3E%3Crect width='1200' height='1200' filter='url%28%23s%29'/%3E%3Crect width='1200' height='1200' filter='url%28%23l%29'/%3E%3Crect width='1200' height='1200' filter='url%28%23f%29'/%3E%3Crect width='1200' height='1200' filter='url%28%23d%29'/%3E%3Crect width='1200' height='1200' filter='url%28%23w%29'/%3E%3C/svg%3E");
+  opacity: 0.85;
+}
+.earth-clouds,
+.earth-cloud-shadow {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='c' filterUnits='userSpaceOnUse' x='0' y='0' width='1200' height='1200'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.005 0.011' numOctaves='5' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 5 0 0 0 -2.55'/%3E%3C/filter%3E%3Crect width='1200' height='1200' filter='url%28%23c%29'/%3E%3C/svg%3E");
+  animation-duration: 480s;
 }
 .earth-clouds {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.007' numOctaves='4' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 6 0 0 0 -3.3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23c)'/%3E%3C/svg%3E");
-  opacity: 0.5;
-  filter: blur(1.5px);
-  animation-duration: 450s;
+  opacity: 0.62;
+  filter: blur(1.2px);
 }
-/* Static lighting: sun glare on the limb, night side shading toward the centre. */
+.earth-cloud-shadow {
+  opacity: 0.35;
+  filter: brightness(0) blur(4px);
+  translate: 0 10px;
+}
+/* Static lighting: sun glare and ocean sheen on the limb, night toward the centre. */
 .earth-shade {
   position: absolute;
   inset: 0;
   background:
     radial-gradient(circle at 20% 4%, rgb(255 255 255 / 0.95) 0%, rgb(255 255 255 / 0.55) 2.5%, rgb(200 225 255 / 0.18) 9%, transparent 18%),
+    radial-gradient(circle at 28% 6%, rgb(150 205 255 / 0.28), transparent 24%),
     radial-gradient(circle at 50% 0%, transparent 0%, transparent 21%, rgb(4 5 11 / 0.5) 34%, #04050b 54%);
 }
+/* City lights glow only on the night side. */
+.earth-night {
+  position: absolute;
+  inset: 0;
+  mask-image: radial-gradient(circle at 50% 0%, transparent 22%, black 34%);
+}
+.earth-lights {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='1200'%3E%3Cfilter id='g' filterUnits='userSpaceOnUse' x='0' y='0' width='1200' height='1200'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.004' numOctaves='5' seed='11' result='n'/%3E%3CfeColorMatrix in='n' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 12 0 0 0 -6.24' result='land'/%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.09' numOctaves='1' seed='2' result='m'/%3E%3CfeColorMatrix in='m' values='0 0 0 0 1 0 0 0 0 0.8 0 0 0 0 0.5 14 0 0 0 -9.3' result='c'/%3E%3CfeComposite in='c' in2='land' operator='in'/%3E%3C/filter%3E%3Crect width='1200' height='1200' filter='url%28%23g%29'/%3E%3C/svg%3E");
+  opacity: 0.9;
+  filter: blur(0.4px);
+}
 @keyframes earth-spin {
-  to { rotate: 360deg; }
+  to { transform: rotate(360deg); }
 }
 /* Fade the planet out at the bottom of the hero instead of a hard edge. */
 .hero-earth {
@@ -99,7 +131,7 @@ body {
   transform: translateY(calc(var(--hs, 0) * 16vh));
   opacity: calc(1 - var(--hs, 0) * 1.5);
 }
-.hero-earth .earth {
+.hero-earth .earth-wrap {
   transform: translateY(calc(var(--hs, 0) * 8vh));
 }
 
@@ -110,6 +142,49 @@ body {
   to { transform: translateX(112vw) rotate(10deg); }
 }
 .satellite { animation: drift linear infinite; }
+
+@keyframes drift-rev {
+  from { transform: translateX(112vw) rotate(8deg); }
+  to { transform: translateX(-12vw) rotate(-10deg); }
+}
+.satellite-rev { animation: drift-rev linear infinite; }
+
+/* Starships climb across the sky, then wait off-screen before the next pass. */
+@keyframes launch {
+  0% { transform: translate(-14vw, 0) rotate(-7deg); }
+  55%, 100% { transform: translate(114vw, -26vh) rotate(-7deg); }
+}
+@keyframes launch-rev {
+  0% { transform: translate(114vw, 0) rotate(7deg) scaleX(-1); }
+  55%, 100% { transform: translate(-14vw, -26vh) rotate(7deg) scaleX(-1); }
+}
+.starship { animation: launch linear infinite; }
+.starship-rev { animation: launch-rev linear infinite; }
+
+@keyframes flicker {
+  from { transform: scaleX(1); opacity: 1; }
+  to { transform: scaleX(0.7); opacity: 0.8; }
+}
+.flame {
+  transform-box: view-box;
+  transform-origin: 9px 10px;
+  animation: flicker 0.12s steps(2) infinite alternate;
+}
+
+@keyframes blink {
+  0%, 70% { opacity: 0; }
+  71%, 100% { opacity: 1; }
+}
+.beacon { animation: blink 1.8s steps(1, end) infinite; }
+
+@keyframes tumble {
+  to { transform: rotate(360deg); }
+}
+.tumble {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: tumble 40s linear infinite;
+}
 
 @keyframes twinkle {
   0%, 100% { opacity: 0.85; transform: scale(1) rotate(0deg); }
@@ -199,8 +274,8 @@ body {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto !important; }
-  .earth-land, .earth-clouds, .satellite, .sparkle, .scroll-cue, .rise, .animate-spin, .animate-ping {
+  .earth-layer, .satellite, .satellite-rev, .starship, .starship-rev, .flame, .beacon, .tumble, .sparkle, .scroll-cue, .rise, .animate-spin, .animate-ping {
     animation: none !important;
   }
-  .satellite { display: none; }
+  .satellite, .satellite-rev, .starship, .starship-rev { display: none; }
 }
