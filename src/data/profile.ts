@@ -218,8 +218,13 @@ export const publications: Publication[] = [
   },
 ];
 
-export const achievements = [
-  { title: "Top 10, All India", event: "Meta × Pragati AI Hackathon" },
+export const achievements: { title: string; event: string; url?: string; urlLabel?: string }[] = [
+  {
+    title: "Top 10, All India",
+    event: "Meta × Pragati AI Hackathon",
+    url: "https://www.facebook.com/photo/?fbid=773214201874755",
+    urlLabel: "View announcement",
+  },
   { title: "2nd Place", event: "AI and X Hackathon, IIT Hyderabad" },
 ];
 

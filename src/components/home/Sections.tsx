@@ -162,6 +162,16 @@ export function Recognition() {
               <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">Hackathon</p>
               <h3 className="mt-4 font-serif text-4xl leading-none">{a.title}</h3>
               <p className="mt-3 text-sm text-muted">{a.event}</p>
+              {a.url && (
+                <a
+                  href={a.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="mt-4 inline-flex w-fit items-center gap-1.5 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-accent transition hover:border-accent hover:bg-accent/20"
+                >
+                  {a.urlLabel ?? "View"} <span aria-hidden="true">↗</span>
+                </a>
+              )}
               <Sparkle className="sparkle mt-auto size-6 self-end pt-8" />
             </article>
           ))}
