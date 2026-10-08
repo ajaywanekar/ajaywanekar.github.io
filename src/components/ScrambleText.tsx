@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-const GLYPHS = "!<>-_\\/[]{}—=+*^?#________";
+const GLYPHS = "!<>-_\\/[]{}=+*^?#________";
 const FRAMES = 40;
 
 const randomGlyph = () => GLYPHS[Math.floor(Math.random() * GLYPHS.length)];

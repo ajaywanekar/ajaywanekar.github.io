@@ -8,7 +8,7 @@ export const site = {
   firstName: "Ajay",
   fullName: "Ajay Devidas Wanekar",
   description:
-    "Ajay Wanekar — AI/ML engineer and M.Tech student at IIT Hyderabad working on computer vision, vision-language models, LLMs and agentic AI.",
+    "Ajay Wanekar, AI/ML engineer and M.Tech student at IIT Hyderabad, working on computer vision, vision-language models, LLMs and agentic AI.",
   badge: "AI / ML Engineer · IIT Hyderabad",
   since: "/Building since 2023",
   location: "Hyderabad, India",
@@ -23,19 +23,19 @@ export const site = {
 export const hello = {
   short: "I'm Ajay, an AI/ML engineer and M.Tech student at IIT Hyderabad.",
   paragraphs: [
-    "I build perception and multimodal AI — from sonar and near-infrared object detection for autonomous vessels, to vision-language models, to LLM systems that retrieve, reason and respond.",
+    "I build perception and multimodal AI: from sonar and near-infrared object detection for autonomous vessels, to vision-language models, to LLM systems that retrieve, reason and respond.",
     "Over 2+ years across three IIT Hyderabad labs, I've built datasets from scratch, fine-tuned VLMs and published my research at IEEE.",
   ],
   facts: [
-    { label: "Now", value: "M.Tech, Energy Science & Technology — IIT Hyderabad (2027)" },
-    { label: "Before", value: "B.E. Electrical Engineering — SPPU (2022)" },
+    { label: "Now", value: "M.Tech, Energy Science & Technology, IIT Hyderabad (2027)" },
+    { label: "Before", value: "B.E. Electrical Engineering, SPPU (2022)" },
     { label: "Labs", value: "LFOVIA · TIHAN · WINET" },
     { label: "Based in", value: "Hyderabad, India" },
   ],
 };
 
 export const statement =
-  "I engineer computer vision, vision-language and agentic AI — taking sensor data through fine-tuned models to systems that perceive, reason and act — and lead that work from plan to delivery.";
+  "I engineer computer vision, vision-language and agentic AI, taking sensor data through fine-tuned models to systems that perceive, reason and act, and I lead that work from plan to delivery.";
 
 export const areas: { id: AreaId; label: string; color: string; tags: string[] }[] = [
   { id: "cv", label: "Computer Vision", color: "#5ab0ff", tags: ["Detection", "Tracking", "Re-identification"] },
@@ -62,7 +62,7 @@ export const experience: Experience[] = [
     org: "LFOVIA Lab, IIT Hyderabad",
     period: "Sep 2024 – Jul 2025",
     summary:
-      "Evaluated and fine-tuned vision-language models — Florence-2 Base/Large, Llama 3.2 Vision and Qwen2-VL — for multimodal text-image understanding, and benchmarked task-specific models including RetinaFace, DeepFace and Siamese architectures for targeted detection, face analysis and visual tracking / re-identification.",
+      "Evaluated and fine-tuned vision-language models (Florence-2 Base/Large, Llama 3.2 Vision and Qwen2-VL) for multimodal text-image understanding, and benchmarked task-specific models including RetinaFace, DeepFace and Siamese architectures for targeted detection, face analysis and visual tracking / re-identification.",
     tags: ["VLMs", "Fine-tuning", "Face analysis", "Re-identification"],
     areas: ["vlm", "cv"],
   },
@@ -72,7 +72,7 @@ export const experience: Experience[] = [
     org: "TIHAN, IIT Hyderabad",
     period: "Nov 2023 – Jul 2024",
     summary:
-      "Worked on multimodal maritime perception: developed and curated near-infrared and sonar datasets, and built sensor-specific preprocessing, annotation, data-quality and model-training pipelines for robust object detection in complex maritime environments — resulting in an IEEE conference publication.",
+      "Worked on multimodal maritime perception: developed and curated near-infrared and sonar datasets, and built sensor-specific preprocessing, annotation, data-quality and model-training pipelines for robust object detection in complex maritime environments, resulting in an IEEE conference publication.",
     tags: ["Maritime perception", "Near-infrared", "Sonar", "Object detection"],
     areas: ["cv", "autonomy"],
   },
@@ -82,7 +82,7 @@ export const experience: Experience[] = [
     org: "WINET Lab, IIT Hyderabad",
     period: "Jul 2023 – Nov 2023",
     summary:
-      "Built foundational sonar-based underwater object-detection datasets with annotation, Python preprocessing, data augmentation and markup pipelines to improve data quality and model robustness — published at IEEE i-COSTE 2023.",
+      "Built foundational sonar-based underwater object-detection datasets with annotation, Python preprocessing, data augmentation and markup pipelines to improve data quality and model robustness. Published at IEEE i-COSTE 2023.",
     tags: ["Sonar", "Dataset curation", "Data augmentation"],
     areas: ["cv", "autonomy"],
   },
@@ -148,14 +148,14 @@ export const projects: Project[] = [
     context: "WINET Lab & TIHAN, IIT Hyderabad · 2023–24",
     metric: { value: "2", label: "IEEE papers" },
     problem:
-      "Autonomous underwater and surface vehicles must detect objects where cameras struggle — murky water, low light and glare — and labeled sonar and near-infrared data is scarce.",
+      "Autonomous underwater and surface vehicles must detect objects where cameras struggle (murky water, low light and glare), and labeled sonar and near-infrared data is scarce.",
     approach: [
       "Built sonar and near-infrared datasets from the ground up",
       "Sensor-specific preprocessing, annotation and augmentation pipelines",
       "Trained and evaluated object-detection models for complex maritime scenes",
     ],
     result:
-      "Two papers at IEEE i-COSTE 2023 — on sonar-based detection for AUVs and near-infrared detection for ASVs.",
+      "Two papers at IEEE i-COSTE 2023: one on sonar-based detection for AUVs and one on near-infrared detection for ASVs.",
     tech: ["Sonar", "Near-infrared", "Object detection", "Python", "Data augmentation"],
     areas: ["cv", "autonomy"],
     planet: { from: "#8fd3ff", to: "#0b3d7a", ring: "#5ab0ff" },
@@ -167,7 +167,7 @@ export const projects: Project[] = [
     context: "M.Tech thesis · IIT Hyderabad",
     metric: { value: "0.996", label: "cross-validated R²" },
     problem:
-      "Predicting the performance of a non-oxidative methane coupling DBD reactor normally takes costly experimental trials — and only 24 experiments were available.",
+      "Predicting the performance of a non-oxidative methane coupling DBD reactor normally takes costly experimental trials, and only 24 experiments were available.",
     approach: [
       "Benchmarked Linear Regression, Random Forest, XGBoost and Gaussian Process Regression",
       "One-hot feature engineering and leave-one-out cross-validation for small-data generalization",
@@ -247,7 +247,7 @@ export const now = {
     "Exploring how vision-language models and agentic systems can give autonomous systems and edge AI a higher-level, semantic understanding of the world.",
   items: [
     "Completing my M.Tech thesis on ML-guided reactor optimization at IIT Hyderabad",
-    "Building with agentic AI — systems that perceive, reason and act",
+    "Building with agentic AI: systems that perceive, reason and act",
     "Looking at how multimodal models can run closer to the edge",
   ],
 };

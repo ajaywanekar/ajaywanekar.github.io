@@ -24,7 +24,7 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: `${site.name} — AI/ML · Computer Vision · VLMs`,
+  title: `${site.name} | AI/ML · Computer Vision · VLMs`,
   description: site.description,
   openGraph: {
     title: site.name,

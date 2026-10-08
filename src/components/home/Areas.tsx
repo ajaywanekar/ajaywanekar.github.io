@@ -12,7 +12,7 @@ function relatedTo(area: AreaId): Related[] {
       .map((p) => ({ key: p.id, kind: "Project", title: p.title, href: `/projects/${p.id}/` })),
     ...experience
       .filter((e) => e.areas.includes(area))
-      .map((e) => ({ key: e.id, kind: "Experience", title: `${e.role} — ${e.org}`, href: `#${e.id}` })),
+      .map((e) => ({ key: e.id, kind: "Experience", title: `${e.role} · ${e.org}`, href: `#${e.id}` })),
     ...publications
       .filter((p) => p.areas.includes(area))
       .map((p) => ({ key: p.id, kind: "Paper", title: p.title, href: `#${p.id}` })),
