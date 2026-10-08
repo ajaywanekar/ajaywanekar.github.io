@@ -21,6 +21,8 @@ html {
 /* The root carries the background so the fixed starfield (z-index -10) shows through. */
 body {
   color: var(--color-fg);
+  /* Rotating/drifting decorations must never make the page scroll sideways. */
+  overflow-x: clip;
 }
 
 ::selection {
