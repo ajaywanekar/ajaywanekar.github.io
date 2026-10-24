@@ -15,8 +15,8 @@ export const site = {
   email: "gs25mtech14301@iith.ac.in",
   resume: "/ajay-wanekar-resume.pdf",
   photo: "/ajay-wanekar.jpg",
-  // TODO: add your profile URLs — empty links are hidden on the site.
-  github: "",
+  // Empty links are hidden on the site.
+  github: "https://github.com/ajaywanekar",
   linkedin: "https://www.linkedin.com/in/ajaywanekar/",
 };
 
@@ -229,7 +229,7 @@ export const achievements: { title: string; event: string; url?: string; urlLabe
 ];
 
 export const skills: { group: string; color: string; items: string[] }[] = [
-  { group: "Languages", color: "#ffb547", items: ["Python", "C++", "SQL"] },
+  { group: "Languages", color: "#ffb547", items: ["Python", "SQL"] },
   {
     group: "ML",
     color: "#4fd1a5",
