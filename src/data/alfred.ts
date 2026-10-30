@@ -12,7 +12,7 @@ export const alfred = {
   subtitle:
     "Applying Computer Vision, Vision-Language Models, and AI Research to Real-World Engineering Challenges.",
   intro:
-    "AI/ML researcher at IIT Hyderabad with 2+ years of research experience in computer vision, vision-language models, image preprocessing and model evaluation, currently a student researcher in the Vision Media Lab (LFOVIA). I am interested in applying these capabilities to OCR-based document understanding and database-driven material identification: getting clean data out of hard images, recognising text with fine-tuned vision-language models, and matching noisy text against a reference set. That is a similar chain to the one Alfred is building.",
+    "M.Tech Student (AI/ML research) at IIT Hyderabad with 2+ years of research experience in computer vision, vision-language models, image preprocessing and model evaluation, currently a student researcher in the Vision Media Lab (LFOVIA). I am interested in applying these capabilities to OCR-based document understanding and database-driven material identification: getting clean data out of hard images, recognising text with fine-tuned vision-language models, and matching noisy text against a reference set. That is a similar chain to the one Alfred is building.",
 
   // A resume tailored to this role (phone number removed); the home page keeps the general one.
   resume: "/ajay-wanekar-resume-alfred.pdf",
