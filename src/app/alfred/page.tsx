@@ -75,8 +75,28 @@ export default function AlfredPage() {
           ))}
         </div>
 
+        {/* Requirements */}
+        <Section index="01" title={alfred.sections.skills}>
+          <ul className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-glass backdrop-blur-sm">
+            {alfred.requirements.map((r) => {
+              const lvl = levelStyle[r.level];
+              return (
+                <li key={r.need} className="grid gap-2 p-5 sm:grid-cols-[1.3fr_auto_1.2fr] sm:items-center sm:gap-6">
+                  <p className="text-fg">{r.need}</p>
+                  <span
+                    className={`w-fit rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] ${lvl.className}`}
+                  >
+                    {lvl.label}
+                  </span>
+                  <p className="text-sm text-muted">{r.proof}</p>
+                </li>
+              );
+            })}
+          </ul>
+        </Section>
+
         {/* Pipeline */}
-        <Section index="01" title={alfred.sections.experience}>
+        <Section index="02" title={alfred.sections.experience}>
           <div className="grid gap-4 md:grid-cols-2">
             {alfred.pipeline.map((p) => (
               <article key={p.step} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
@@ -100,26 +120,6 @@ export default function AlfredPage() {
               </article>
             ))}
           </div>
-        </Section>
-
-        {/* Requirements */}
-        <Section index="02" title={alfred.sections.skills}>
-          <ul className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-glass backdrop-blur-sm">
-            {alfred.requirements.map((r) => {
-              const lvl = levelStyle[r.level];
-              return (
-                <li key={r.need} className="grid gap-2 p-5 sm:grid-cols-[1.3fr_auto_1.2fr] sm:items-center sm:gap-6">
-                  <p className="text-fg">{r.need}</p>
-                  <span
-                    className={`w-fit rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] ${lvl.className}`}
-                  >
-                    {lvl.label}
-                  </span>
-                  <p className="text-sm text-muted">{r.proof}</p>
-                </li>
-              );
-            })}
-          </ul>
         </Section>
 
         {/* Plan */}
