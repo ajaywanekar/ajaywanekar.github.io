@@ -40,7 +40,7 @@ export const yamaha = {
     { need: "ROS2 for control system development", level: "strong", proof: "Used ROS2 in the TIHAN project" },
     { need: "C++ and embedded systems", level: "growing", proof: "CUDA and Python today; C++ and embedded are next on my list" },
     { need: "MLOps tools", level: "strong", proof: "Repeatable Python training and benchmarking pipelines" },
-    { need: "Studying Japanese toward JLPT N4 within three years", level: "solid", proof: "Studying Japanese fast as a quick learner; already know English, Hindi and Marathi" },
+    { need: "Studying Japanese", level: "solid", proof: "Studying Japanese fast as a quick learner; already know English, Hindi and Marathi" },
   ],
 
   // The role's duties, with the work that backs each one.
