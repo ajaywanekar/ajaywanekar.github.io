@@ -110,8 +110,8 @@ export const yamaha = {
   // Short cards: where Ajay plugs into Yamaha specifically.
   fit: [
     {
-      title: "From vessels to control",
-      body: "Yamaha builds marine vessels, and my research covers perception for autonomous underwater and surface vehicles. I understand the data these machines depend on.",
+      title: "Ready for any platform",
+      body: "Whether the machine is a vessel, a ground vehicle or a robot, learning systems depend on noisy real-world data and careful evaluation. I have worked with sonar, near-infrared and RGB-D data and physical experiments, so I can adapt quickly to the platform your team is building.",
     },
     {
       title: "Ready for a small team",
