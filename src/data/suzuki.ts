@@ -31,18 +31,18 @@ export const suzuki = {
 
   // Honest fit against the listed requirements. level: strong | solid | growing
   requirements: [
-    { need: "Perception for autonomous systems", level: "strong", proof: "2 IEEE papers on detection for AUVs and ASVs; visual tracking and re-identification" },
-    { need: "Generative AI expertise", level: "strong", proof: "Fine-tuned VLMs and LLMs; built RAG and intent classification pipelines" },
+    { need: "Perception for autonomous systems", level: "strong", proof: "2 IEEE papers on detection for AUVs and ASVs; visual tracking and re-identification; YOLO and DeepSORT perception for vehicles and pedestrians" },
+    { need: "Generative AI expertise", level: "strong", proof: "Fine-tuned VLMs and LLMs; built RAG and intent classification pipelines; explored VLM scene understanding of road users and signals" },
     { need: "Analysing and implementing open-source AI technology", level: "strong", proof: "Evaluated and fine-tuned Florence-2, Llama 3.2 Vision and Qwen2-VL" },
     { need: "System evaluation", level: "strong", proof: "Benchmarking with precision, recall and IoU; Leave-One-Out cross-validation" },
-    { need: "Strong IT skills", level: "strong", proof: "Python, SQL, CUDA; multi-tenant platform with real-time STT / TTS pipelines" },
+    { need: "Strong IT skills", level: "strong", proof: "Python, C++, SQL, CUDA; multi-tenant platform with real-time STT / TTS pipelines" },
     { need: "English communication", level: "strong", proof: "Research and IEEE publications in English; also speak Hindi and Marathi" },
     { need: "Python", level: "strong", proof: "Daily tool across every project" },
-    { need: "ROS", level: "solid", proof: "Used ROS2 in the TIHAN project" },
-    { need: "Linux", level: "solid", proof: "Working environment for my ROS2 and model-training work" },
-    { need: "Autonomous driving system design and decision-making", level: "strong", proof: "Autonomy research on AUVs and ASVs; perception, tracking and model evaluation" },
+    { need: "ROS", level: "solid", proof: "Used ROS2 in the TIHAN project; implemented perception modules and VLM inference with ROS2" },
+    { need: "Linux", level: "solid", proof: "Working environment for my ROS2 and model-training work; perception modules built on Linux for vehicle integration" },
+    { need: "Autonomous driving system design and decision-making", level: "strong", proof: "Autonomy research on AUVs and ASVs; perception, tracking and model evaluation; camera-based autonomous vehicle perception tested in CARLA (TIHAN)" },
     { need: "MATLAB and Simulink", level: "growing", proof: "Python is my main tool today; B.E. Electrical Engineering background to build on" },
-    { need: "CARLA", level: "growing", proof: "Not yet used in a project; the first step in my plan below" },
+    { need: "CARLA", level: "solid", proof: "Tested autonomous vehicle perception and behaviour in CARLA across driving scenarios (TIHAN); also use Gazebo" },
     { need: "Studying Japanese", level: "solid", proof: "Studying Japanese fast as a quick learner; already know English, Hindi and Marathi" },
   ],
 
@@ -61,15 +61,15 @@ export const suzuki = {
       title: "Track and understand scenes",
       ask: "Software that turns perception into understanding for decision-making.",
       evidence:
-        "Benchmarked Siamese architectures for visual tracking and re-identification, and evaluated models on segmentation, crowd analysis and action recognition using RGB and depth data (LFOVIA Lab).",
-      tags: ["Tracking", "Segmentation", "Action recognition", "RGB-D"],
+        "Benchmarked Siamese architectures for visual tracking and re-identification, and evaluated models on segmentation, crowd analysis and action recognition using RGB and depth data (LFOVIA Lab). At TIHAN, developed camera-based perception with YOLO and DeepSORT for real-time object detection, multi-object tracking and position estimation of surrounding vehicles and pedestrians.",
+      tags: ["Tracking", "Segmentation", "Action recognition", "RGB-D", "YOLO", "DeepSORT"],
     },
     {
       step: "03",
       title: "Assess generative AI",
       ask: "Research and assess the application of generative AI in autonomous driving.",
       evidence:
-        "Evaluated and fine-tuned Florence-2, Llama 3.2 Vision and Qwen2-VL as alternatives to conventional task-specific models, which is the same question your role asks. Also built a hybrid retrieval and LLM pipeline that improved answer relevance by 18%.",
+        "Evaluated and fine-tuned Florence-2, Llama 3.2 Vision and Qwen2-VL as alternatives to conventional task-specific models, which is the same question your role asks. Explored VLM-based scene understanding for autonomous systems, interpreting road users, signals and scene context from camera images, and integrated model inference with ROS2 on Linux for real-time perception pipelines. Also built a hybrid retrieval and LLM pipeline that improved answer relevance by 18%.",
       tags: ["VLMs", "LLM fine-tuning", "RAG", "Open-source models"],
     },
     {
@@ -77,8 +77,16 @@ export const suzuki = {
       title: "Evaluate the results",
       ask: "System evaluation, with verification of integration and consistency.",
       evidence:
-        "Benchmarked detection and recognition in Python pipelines using precision, recall and IoU, with structured quality validation of the input data. My thesis uses Leave-One-Out cross-validation to get honest numbers from only 24 experiments.",
-      tags: ["Precision / Recall", "IoU", "Benchmarking", "Cross-validation"],
+        "Benchmarked detection and recognition in Python pipelines using precision, recall and IoU, with structured quality validation of the input data. My thesis uses Leave-One-Out cross-validation to get honest numbers from only 24 experiments, comparing Linear Regression, Random Forest, XGBoost and Gaussian Process Regression, and I recently adapted the RRSI method to it to rigorously verify that model improvements are real.",
+      tags: ["Precision / Recall", "IoU", "Benchmarking", "Cross-validation", "RRSI"],
+    },
+    {
+      step: "05",
+      title: "Test in simulation first",
+      ask: "Simulation testing and vehicle integration for autonomous driving software.",
+      evidence:
+        "Tested autonomous vehicle perception and behaviour in CARLA across driving scenarios before real-world testing, implemented the perception modules with ROS2 on Linux for vehicle integration and testing, and annotated LiDAR and camera data for training and validating perception models (TIHAN).",
+      tags: ["CARLA", "ROS2", "Linux", "LiDAR", "Vehicle integration"],
     },
   ],
 
@@ -114,7 +122,7 @@ export const suzuki = {
   fit: [
     {
       title: "From water to road",
-      body: "My research on autonomous underwater and surface vehicles deals with perception in difficult conditions, and it also connects to Suzuki's outboard motor business. Road vehicles are the next step I want to take.",
+      body: "My research on autonomous underwater and surface vehicles deals with perception in difficult conditions, and it also connects to Suzuki's outboard motor business. I have since built camera-based perception for road vehicles at TIHAN, tested in CARLA, and want to take it further at Suzuki.",
     },
     {
       title: "A measured view of generative AI",
@@ -122,7 +130,7 @@ export const suzuki = {
     },
     {
       title: "Ready for your 2027 intake",
-      body: "I complete my M.Tech at IIT Hyderabad in 2027, in time for the October 1, 2027 joining date, and I am comfortable working in English with international teams.",
+      body: "I complete my M.Tech at IIT Hyderabad in 2027, in time for the October 1, 2027 joining date, and I am comfortable working in English with international teams. I also placed in the Top 10 All India at the Meta x Pragati AI Hackathon.",
     },
   ],
 
