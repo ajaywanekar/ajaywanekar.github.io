@@ -94,7 +94,7 @@ export default function YamahaPage() {
         <Section index="02" title={yamaha.sections.experience}>
           <div className="grid gap-4 md:grid-cols-2">
             {yamaha.pipeline.map((p) => (
-              <article key={p.step} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
+              <article key={p.step} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7 md:odd:last:col-span-2">
                 <p className={`${label} text-accent`}>Stage {p.step}</p>
                 <h3 className="mt-3 font-serif text-3xl leading-tight">{p.title}</h3>
                 <p className="mt-4 text-sm text-faint">

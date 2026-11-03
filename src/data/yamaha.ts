@@ -36,9 +36,9 @@ export const yamaha = {
     { need: "Python and PyTorch / TensorFlow", level: "strong", proof: "Daily tools across every project" },
     { need: "Strong interest in AI and machine learning technology", level: "strong", proof: "Moved from sensor data to perception, VLMs and LLM systems" },
     { need: "Experience with AI system development", level: "strong", proof: "Multi-tenant conversational AI platform with real-time STT / TTS" },
-    { need: "Control engineering, robotics or simulation", level: "strong", proof: "B.E. Electrical Engineering; perception work for AUVs and ASVs" },
-    { need: "ROS2 for control system development", level: "strong", proof: "Used ROS2 in the TIHAN project" },
-    { need: "C++ and embedded systems", level: "growing", proof: "CUDA and Python today; C++ and embedded are next on my list" },
+    { need: "Control engineering, robotics or simulation", level: "strong", proof: "B.E. Electrical Engineering; perception work for AUVs and ASVs; tested autonomous vehicle perception in CARLA, also use Gazebo" },
+    { need: "ROS2 for control system development", level: "strong", proof: "Used ROS2 in the TIHAN project; implemented perception modules and VLM inference with ROS2 on Linux" },
+    { need: "C++ and embedded systems", level: "growing", proof: "C++, CUDA and Python today; embedded systems are next on my list" },
     { need: "MLOps tools", level: "strong", proof: "Repeatable Python training and benchmarking pipelines" },
     { need: "Studying Japanese", level: "solid", proof: "Studying Japanese fast as a quick learner; already know English, Hindi and Marathi" },
   ],
@@ -58,8 +58,8 @@ export const yamaha = {
       title: "Design and train deep models",
       ask: "Design and implementation of deep learning models.",
       evidence:
-        "Evaluated and fine-tuned Florence-2, Llama 3.2 Vision and Qwen2-VL, and benchmarked task-specific architectures including RetinaFace, DeepFace and Siamese networks for detection and visual tracking (LFOVIA Lab).",
-      tags: ["PyTorch", "Transformers", "CNNs", "Fine-tuning"],
+        "Evaluated and fine-tuned Florence-2, Llama 3.2 Vision and Qwen2-VL, and benchmarked task-specific architectures including RetinaFace, DeepFace and Siamese networks for detection and visual tracking (LFOVIA Lab). Explored VLM-based scene understanding for autonomous systems, interpreting road users, signals and scene context from camera images, and integrated model inference with ROS2 on Linux for real-time perception pipelines.",
+      tags: ["PyTorch", "Transformers", "CNNs", "Fine-tuning", "ROS2"],
     },
     {
       step: "03",
@@ -74,8 +74,16 @@ export const yamaha = {
       title: "Learn from costly experiments",
       ask: "Machine learning for physical systems, where every real-world trial has a cost.",
       evidence:
-        "My M.Tech thesis predicts the performance of a plasma reactor from its operating conditions using only 24 experiments, validated with Leave-One-Out cross-validation (R² up to 0.996), and identifies Bayesian Optimization for experiment-guided tuning.",
-      tags: ["Gaussian Processes", "LOOCV", "Bayesian Optimization"],
+        "My M.Tech thesis predicts the performance of a plasma reactor from its operating conditions using only 24 experiments, validated with Leave-One-Out cross-validation (R² up to 0.996), and identifies Bayesian Optimization for experiment-guided tuning. I compared Linear Regression, Random Forest, XGBoost and Gaussian Process Regression, and recently adapted the RRSI method to this work to rigorously verify that model improvements are real.",
+      tags: ["Gaussian Processes", "XGBoost", "LOOCV", "Bayesian Optimization", "RRSI"],
+    },
+    {
+      step: "05",
+      title: "Test in simulation first",
+      ask: "Simulation environments and ROS2 for machine control development.",
+      evidence:
+        "Developed camera-based perception with YOLO and DeepSORT for real-time object detection, multi-object tracking and position estimation of surrounding vehicles and pedestrians. Tested the vehicle's perception and behaviour in CARLA across driving scenarios before real-world testing, implemented the modules with ROS2 on Linux for vehicle integration, and annotated LiDAR and camera data for training and validation (TIHAN).",
+      tags: ["YOLO", "DeepSORT", "CARLA", "ROS2", "LiDAR"],
     },
   ],
 
@@ -115,7 +123,7 @@ export const yamaha = {
     },
     {
       title: "Ready for a small team",
-      body: "Your AI Creation Group works in small project teams with high individual autonomy. I have worked across three research labs and can drive my own work while collaborating closely.",
+      body: "Your AI Creation Group works in small project teams with high individual autonomy. I have worked across three research labs and can drive my own work while collaborating closely. I also placed in the Top 10 All India at the Meta x Pragati AI Hackathon.",
     },
     {
       title: "Japanese already underway",
