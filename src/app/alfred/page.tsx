@@ -151,24 +151,39 @@ export default function AlfredPage() {
         {/* Open study */}
         <Section index="05" title={alfred.sections.study}>
           <p className="max-w-3xl text-lg leading-relaxed text-muted">{alfred.study.intro}</p>
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {alfred.study.items.map((s) => (
-              <article key={s.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
-                <h3 className="text-lg text-fg">{s.title}</h3>
-                <p className="mt-5 font-serif text-5xl leading-none text-accent">{s.value}</p>
-                <p className={`${label} mt-3 text-faint`}>{s.unit}</p>
-                <p className="mt-5 leading-relaxed text-muted">{s.body}</p>
-              </article>
-            ))}
+          <div className="mt-10 rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-8">
+            <h3 className="font-serif text-3xl leading-tight">{alfred.study.title}</h3>
+            <dl className="mt-8 grid gap-6 sm:grid-cols-3">
+              {alfred.study.stats.map((s) => (
+                <div key={s.label}>
+                  <dt className="font-serif text-5xl leading-none text-accent">{s.value}</dt>
+                  <dd className={`${label} mt-3 text-faint`}>{s.label}</dd>
+                </div>
+              ))}
+            </dl>
+            <ul className="mt-8 space-y-3 leading-relaxed text-muted">
+              {alfred.study.points.map((p) => (
+                <li key={p} className="flex gap-4">
+                  <span className="mt-3 h-px w-4 shrink-0 bg-accent" />
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <img
+              src={alfred.study.figure}
+              alt={alfred.study.figureAlt}
+              className="mt-8 w-full rounded-xl bg-white p-2"
+              loading="lazy"
+            />
+            <a
+              href={alfred.study.repo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-fg transition hover:border-accent hover:text-accent"
+            >
+              Code and results on GitHub <span aria-hidden>↗</span>
+            </a>
           </div>
-          <a
-            href={alfred.study.repo}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-fg transition hover:border-accent hover:text-accent"
-          >
-            Code and results on GitHub <span aria-hidden>↗</span>
-          </a>
         </Section>
 
         {/* Why */}

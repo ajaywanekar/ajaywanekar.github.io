@@ -114,31 +114,25 @@ export const alfred = {
     },
   ],
 
-  // An open study Ajay built on public data, on the problems Alfred's AI team works on.
+  // An open study Ajay built on public data: asbestos-cement roofs from satellite spectra.
   study: {
+    title: "Asbestos-cement roofs from satellite data",
     intro:
-      "Before applying, I built an open study on detecting asbestos with machine learning, using only public data, to learn the problems your AI team works on: under the microscope, in XRD patterns, and from satellite data. Code, results and figures are on GitHub.",
-    repo: "https://github.com/ajaywanekar/asbestos-ai-study",
-    items: [
-      {
-        title: "Asbestos-cement roofs from satellite data",
-        value: "95.2%",
-        unit: "accuracy in a new region (the dataset authors' best: 90.2%)",
-        body: "Trained in Australia and tested in another region, with no labels from it. Spectral-shape features and a decision threshold fitted to the new area did it. This is the problem of moving to a new country, such as India, where asbestos-cement roofs are common.",
-      },
-      {
-        title: "Asbestos fibres in microscope images",
-        value: "92.5%",
-        unit: "of long fibres found on unseen samples",
-        body: "YOLO11, RT-DETR, RF-DETR and Faster R-CNN on 1,331 phase-contrast images. I found a data leak in the public benchmark and scored every model on a split by sample. Fibre count per image: R² 0.88.",
-      },
-      {
-        title: "Asbestos in XRD patterns",
-        value: "0.84",
-        unit: "AUC for a 1D CNN (classic peak matching: 0.69)",
-        body: "Trained on 80,000 patterns simulated from open crystal structures and tested on real RRUFF patterns, where it finds 94% of mixtures at 3% asbestos. Closing the remaining false-alarm gap needs real lab data, which is where your sample archive matters.",
-      },
+      "Before applying, I built an open study on finding asbestos-cement roofs from 8-band satellite data. The model is trained in Australia and has to work in a different region, with no labels from it: the same problem Alfred faces when moving into a new country such as India, where asbestos-cement roofs are still common.",
+    stats: [
+      { value: "95.2%", label: "accuracy in the unseen region" },
+      { value: "90.2%", label: "the dataset authors' best model" },
+      { value: "0.955", label: "F1 score" },
     ],
+    points: [
+      "Inside Australia every model scores about 97%, but in the new region they fall to 80 to 91%: brightness, sensors and the mix of roofs change between places.",
+      "Spectral-shape features (each band divided by the pixel's brightness, plus band-pair differences) let the model rank roofs almost perfectly in the new region (AUC 0.984).",
+      "A decision threshold fitted to the new region's own unlabelled scores, not the one learned in Australia, then gives 95.2% accuracy.",
+    ],
+    figure: "/alfred/roofs-new-area.png",
+    figureAlt:
+      "Histogram of model scores in the new region: asbestos and non-asbestos roofs separate well, the Australian cut-off sits inside the asbestos group, and the new-region cut-off falls in the gap.",
+    repo: "https://github.com/ajaywanekar/asbestos-ai-study",
   },
 
   // Short cards: where Ajay plugs into Alfred specifically.
