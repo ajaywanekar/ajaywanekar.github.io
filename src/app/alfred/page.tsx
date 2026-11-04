@@ -148,8 +148,31 @@ export default function AlfredPage() {
           </div>
         </Section>
 
+        {/* Open study */}
+        <Section index="05" title={alfred.sections.study}>
+          <p className="max-w-3xl text-lg leading-relaxed text-muted">{alfred.study.intro}</p>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {alfred.study.items.map((s) => (
+              <article key={s.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
+                <h3 className="text-lg text-fg">{s.title}</h3>
+                <p className="mt-5 font-serif text-5xl leading-none text-accent">{s.value}</p>
+                <p className={`${label} mt-3 text-faint`}>{s.unit}</p>
+                <p className="mt-5 leading-relaxed text-muted">{s.body}</p>
+              </article>
+            ))}
+          </div>
+          <a
+            href={alfred.study.repo}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-fg transition hover:border-accent hover:text-accent"
+          >
+            Code and results on GitHub <span aria-hidden>↗</span>
+          </a>
+        </Section>
+
         {/* Why */}
-        <Section index="05" title={alfred.sections.why}>
+        <Section index="06" title={alfred.sections.why}>
           <ul className="space-y-4 text-lg leading-relaxed text-muted">
             {alfred.why.map((w) => (
               <li key={w} className="flex gap-4">
@@ -160,7 +183,7 @@ export default function AlfredPage() {
           </ul>
         </Section>
 
-        <JapanPhotos index="06" />
+        <JapanPhotos index="07" />
 
         {/* Contact */}
         <div className="mt-24 border-t border-line pt-10">
