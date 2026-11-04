@@ -76,28 +76,8 @@ export default function AlfredPage() {
           ))}
         </div>
 
-        {/* Requirements */}
-        <Section index="01" title={alfred.sections.skills}>
-          <ul className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-glass backdrop-blur-sm">
-            {alfred.requirements.map((r) => {
-              const lvl = levelStyle[r.level];
-              return (
-                <li key={r.need} className="grid gap-2 p-5 sm:grid-cols-[1.3fr_auto_1.2fr] sm:items-center sm:gap-6">
-                  <p className="text-fg">{r.need}</p>
-                  <span
-                    className={`w-fit rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] ${lvl.className}`}
-                  >
-                    {lvl.label}
-                  </span>
-                  <p className="text-sm text-muted">{r.proof}</p>
-                </li>
-              );
-            })}
-          </ul>
-        </Section>
-
         {/* Open study */}
-        <Section index="02" title={alfred.sections.study}>
+        <Section index="01" title={alfred.sections.study}>
           <p className="max-w-3xl text-lg leading-relaxed text-muted">{alfred.study.intro}</p>
           <div className="mt-10 rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-8">
             <h3 className="font-serif text-3xl leading-tight">{alfred.study.title}</h3>
@@ -132,6 +112,26 @@ export default function AlfredPage() {
               Code and results on GitHub <span aria-hidden>↗</span>
             </a>
           </div>
+        </Section>
+
+        {/* Requirements */}
+        <Section index="02" title={alfred.sections.skills}>
+          <ul className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-glass backdrop-blur-sm">
+            {alfred.requirements.map((r) => {
+              const lvl = levelStyle[r.level];
+              return (
+                <li key={r.need} className="grid gap-2 p-5 sm:grid-cols-[1.3fr_auto_1.2fr] sm:items-center sm:gap-6">
+                  <p className="text-fg">{r.need}</p>
+                  <span
+                    className={`w-fit rounded-full border px-3 py-1 font-mono text-[10px] uppercase tracking-[0.15em] ${lvl.className}`}
+                  >
+                    {lvl.label}
+                  </span>
+                  <p className="text-sm text-muted">{r.proof}</p>
+                </li>
+              );
+            })}
+          </ul>
         </Section>
 
         {/* Where I fit */}
