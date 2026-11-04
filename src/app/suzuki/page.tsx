@@ -49,7 +49,7 @@ export default function SuzukiPage() {
                 Email me <span aria-hidden="true" className="text-accent">↗</span>
               </a>
               <a
-                href={site.resume}
+                href="/ajay-wanekar-resume-suzuki.pdf"
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm text-muted transition hover:border-white/30 hover:text-fg"
