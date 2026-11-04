@@ -1,6 +1,6 @@
 import { Hello } from "@/components/home/Hello";
 import { Hero } from "@/components/home/Hero";
-import { Contact, Experience, Now, Projects, Recognition, Toolkit, Work } from "@/components/home/Sections";
+import { Beyond, Contact, Experience, Now, Projects, Recognition, Toolkit, Work } from "@/components/home/Sections";
 import { Statement } from "@/components/home/Statement";
 
 export default function Home() {
@@ -15,6 +15,7 @@ export default function Home() {
       <Recognition />
       <Toolkit />
       <Now />
+      <Beyond />
       <Contact />
     </main>
   );

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Planet } from "@/components/space";
 import { site } from "@/data/profile";
 import { yamaha } from "@/data/yamaha";
+import { JapanPhotos } from "@/components/JapanPhotos";
 
 // Unlisted page shared directly with Yamaha: kept out of search results and the nav.
 export const metadata: Metadata = {
@@ -153,6 +154,8 @@ export default function YamahaPage() {
             ))}
           </ul>
         </Section>
+
+        <JapanPhotos index="06" />
 
         {/* Contact */}
         <div className="mt-24 border-t border-line pt-10">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { achievements, experience, now, projects, publications, site, type Project } from "@/data/profile";
+import { achievements, beyond, experience, now, projects, publications, site, type Project } from "@/data/profile";
 import { MailIcon } from "../icons";
 import { ScrambleText } from "../ScrambleText";
 import { Planet, SectionHeading, Sparkle } from "../space";
@@ -216,12 +216,50 @@ export function Now() {
   );
 }
 
+// Five photos: two large on top, three below.
+const gridCols: Record<number, string> = { 2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4", 5: "lg:grid-cols-6" };
+
+export function Beyond() {
+  return (
+    <section id="beyond" className={section}>
+      <div className={container}>
+        <SectionHeading
+          index="08"
+          eyebrow="Beyond the lab"
+          title={<ScrambleText text="Curiosity, off the clock" />}
+          aside={<p className="max-w-xs text-sm leading-relaxed text-muted">{beyond.statement}</p>}
+        />
+        <div className="space-y-16">
+          {beyond.groups.map((g) => (
+            <div key={g.title}>
+              <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">{g.label}</p>
+              <h3 className="mt-2 mb-6 font-serif text-3xl leading-tight sm:text-4xl">{g.title}</h3>
+              <div className={`grid gap-4 sm:grid-cols-2 ${gridCols[g.photos.length] ?? "lg:grid-cols-3"}`}>
+                {g.photos.map((ph, i) => (
+                  <figure
+                    key={ph.src}
+                    className={`overflow-hidden rounded-2xl border border-line bg-glass backdrop-blur-sm ${g.photos.length === 5 ? (i < 2 ? "lg:col-span-3" : "lg:col-span-2") : ""}`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={ph.src} alt={ph.alt} loading="lazy" className="aspect-square w-full object-cover" />
+                    <figcaption className="p-4 text-sm leading-relaxed text-muted">{ph.caption}</figcaption>
+                  </figure>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export function Contact() {
   return (
     <section id="contact" className={section}>
       <div className={`${container} flex flex-col items-center text-center`}>
         <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
-          <span className="text-faint">08 /</span> Contact
+          <span className="text-faint">09 /</span> Contact
         </p>
         <h2 className="mt-4 font-serif text-7xl leading-none sm:text-9xl">
           <ScrambleText text="Let's talk." />

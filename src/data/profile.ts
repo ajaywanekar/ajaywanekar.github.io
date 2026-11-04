@@ -262,3 +262,41 @@ export const now = {
     "Looking at how multimodal models can run closer to the edge",
   ],
 };
+
+// "Beyond the lab": personal photos shown last on the home page, after all professional sections.
+// Photos live in public/life (cropped, resized, metadata stripped).
+export const beyond = {
+  statement:
+    "Curiosity does not stop when the lab closes. I build things for fun, learn from people who have gone further than me, and I am deeply curious about Japan, its language and its design.",
+  groups: [
+    {
+      label: "Creativity",
+      title: "Building for fun",
+      photos: [
+        { src: "/life/robot-face.jpg", alt: "Small robot with a cat face on a 2-inch LCD", caption: "A desk companion I built: a 2-inch LCD face, speaker, touch and motion sensors." },
+        { src: "/life/robot-case.jpg", alt: "Purple 3D-printed cat-shaped case", caption: "Its 3D-printed cat case, front." },
+      ],
+    },
+    {
+      label: "Curiosity",
+      title: "Learning Japan",
+      photos: [
+        { src: "/life/hiragana-worksheet.jpg", alt: "Handwritten hiragana practice worksheet", caption: "Hiragana Lesson 1, in my own handwriting, with pronunciation notes." },
+        { src: "/life/hiragana-practice.jpg", alt: "Class screen showing the day's hiragana practice set", caption: "Today's practice set: vowels and the K-row, stroke order first." },
+        { src: "/life/hiragana-class.jpg", alt: "Japanese class with a hiragana chart on the screen", caption: "Japanese class: working through the hiragana chart." },
+        { src: "/life/guidebook.jpg", alt: "Japanese travel guidebook about India", caption: "India through Japanese eyes: the Chikyu no Arukikata guide." },
+        { src: "/life/seiko.jpg", alt: "Seiko chronograph on a wrist", caption: "Japanese design up close: a Seiko chronograph." },
+      ],
+    },
+    {
+      label: "Encouragement",
+      title: "Learning from others",
+      photos: [
+        { src: "/life/astronaut-talk.jpg", alt: "Talk by astronaut Group Captain Shubhanshu Shukla at IIT Hyderabad", caption: "Listening to Group Captain Shubhanshu Shukla, Axiom-4 pilot, at IIT Hyderabad." },
+        { src: "/life/bookstore.jpg", alt: "Bookshelf of non-fiction books", caption: "Reading beyond AI: startups, money and the mind." },
+        { src: "/life/iith-sunrise.jpg", alt: "IIT Hyderabad tower at sunrise", caption: "Sunrise at IIT Hyderabad." },
+        { src: "/life/campus-evening.jpg", alt: "Campus buildings at sunset", caption: "Evening light on campus." },
+      ],
+    },
+  ],
+};

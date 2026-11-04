@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Planet } from "@/components/space";
 import type { Company, Level } from "@/data/companies";
 import { site } from "@/data/profile";
+import { JapanPhotos } from "@/components/JapanPhotos";
 
 /** Metadata for an unlisted company page: kept out of search results and the nav. */
 export function companyMetadata(c: Company): Metadata {
@@ -157,6 +158,8 @@ export function CompanyPage({ company: c }: { company: Company }) {
             ))}
           </ul>
         </Section>
+
+        <JapanPhotos index="06" />
 
         {/* Contact */}
         <div className="mt-24 border-t border-line pt-10">
