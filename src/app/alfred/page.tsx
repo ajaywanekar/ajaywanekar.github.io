@@ -96,60 +96,8 @@ export default function AlfredPage() {
           </ul>
         </Section>
 
-        {/* Pipeline */}
-        <Section index="02" title={alfred.sections.experience}>
-          <div className="grid gap-4 md:grid-cols-2">
-            {alfred.pipeline.map((p) => (
-              <article key={p.step} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
-                <p className={`${label} text-accent`}>Stage {p.step}</p>
-                <h3 className="mt-3 font-serif text-3xl leading-tight">{p.title}</h3>
-                <p className="mt-4 text-sm text-faint">
-                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">You need · </span>
-                  {p.ask}
-                </p>
-                <p className="mt-4 leading-relaxed text-muted">{p.evidence}</p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {p.tags.map((t) => (
-                    <span
-                      key={t}
-                      className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted"
-                    >
-                      {t}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </Section>
-
-        {/* Plan */}
-        <Section index="03" title={alfred.sections.approach}>
-          <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {alfred.plan.map((p, i) => (
-              <li key={p.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm">
-                <p className={`${label} text-faint`}>{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="mt-3 text-lg text-fg">{p.title}</h3>
-                <p className="mt-3 leading-relaxed text-muted">{p.body}</p>
-              </li>
-            ))}
-          </ol>
-        </Section>
-
-        {/* Where I fit */}
-        <Section index="04" title={alfred.sections.fit}>
-          <div className="grid gap-4 md:grid-cols-3">
-            {alfred.fit.map((f) => (
-              <article key={f.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
-                <h3 className="font-serif text-3xl leading-tight">{f.title}</h3>
-                <p className="mt-4 leading-relaxed text-muted">{f.body}</p>
-              </article>
-            ))}
-          </div>
-        </Section>
-
         {/* Open study */}
-        <Section index="05" title={alfred.sections.study}>
+        <Section index="02" title={alfred.sections.study}>
           <p className="max-w-3xl text-lg leading-relaxed text-muted">{alfred.study.intro}</p>
           <div className="mt-10 rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-8">
             <h3 className="font-serif text-3xl leading-tight">{alfred.study.title}</h3>
@@ -184,6 +132,58 @@ export default function AlfredPage() {
               Code and results on GitHub <span aria-hidden>↗</span>
             </a>
           </div>
+        </Section>
+
+        {/* Where I fit */}
+        <Section index="03" title={alfred.sections.fit}>
+          <div className="grid gap-4 md:grid-cols-3">
+            {alfred.fit.map((f) => (
+              <article key={f.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
+                <h3 className="font-serif text-3xl leading-tight">{f.title}</h3>
+                <p className="mt-4 leading-relaxed text-muted">{f.body}</p>
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        {/* Pipeline */}
+        <Section index="04" title={alfred.sections.experience}>
+          <div className="grid gap-4 md:grid-cols-2">
+            {alfred.pipeline.map((p) => (
+              <article key={p.step} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
+                <p className={`${label} text-accent`}>Stage {p.step}</p>
+                <h3 className="mt-3 font-serif text-3xl leading-tight">{p.title}</h3>
+                <p className="mt-4 text-sm text-faint">
+                  <span className="font-mono text-[10px] uppercase tracking-[0.2em]">You need · </span>
+                  {p.ask}
+                </p>
+                <p className="mt-4 leading-relaxed text-muted">{p.evidence}</p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {p.tags.map((t) => (
+                    <span
+                      key={t}
+                      className="rounded-full border border-line px-3 py-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </Section>
+
+        {/* Plan */}
+        <Section index="05" title={alfred.sections.approach}>
+          <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {alfred.plan.map((p, i) => (
+              <li key={p.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm">
+                <p className={`${label} text-faint`}>{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="mt-3 text-lg text-fg">{p.title}</h3>
+                <p className="mt-3 leading-relaxed text-muted">{p.body}</p>
+              </li>
+            ))}
+          </ol>
         </Section>
 
         {/* Why */}
