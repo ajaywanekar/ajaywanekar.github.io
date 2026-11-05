@@ -370,7 +370,7 @@ export const piLabs: Company = {
     { need: "Evaluation rigour (AUC, EER, precision / recall)", level: "strong", proof: "Precision, recall, IoU, LOOCV; RRSI to check gains exceed experimental noise" },
     { need: "Speech and voice models", level: "solid", proof: "Trained and tested various voice models (speech-to-text, text-to-speech) for a conversational AI platform (IIT Hyderabad Build Program)" },
     { need: "Indian languages", level: "solid", proof: "Marathi, Hindi and English; multilingual voice, chat and email AI platform" },
-    { need: "Deepfake and audio-forensics models", level: "growing", proof: "New domain for me; my face-analysis, multimodal and generalisation work transfers directly" },
+    { need: "Face and audio models for deepfake detection", level: "strong", proof: "Face analysis with RetinaFace, DeepFace and Siamese networks; VLM fine-tuning; voice models trained and tested for a conversational AI platform" },
   ],
   pipeline: [
     {
