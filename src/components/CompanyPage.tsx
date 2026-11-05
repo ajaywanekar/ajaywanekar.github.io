@@ -25,6 +25,8 @@ const label = "font-mono text-[11px] uppercase tracking-[0.25em]";
 
 export function CompanyPage({ company: c }: { company: Company }) {
   const mailto = `mailto:${site.email}?subject=${encodeURIComponent(c.mailSubject)}`;
+  let n = 0;
+  const next = () => String(++n).padStart(2, "0");
   return (
     <main className="pt-32 pb-24 sm:pt-40">
       <div className="mx-auto max-w-6xl px-4 sm:px-8">
@@ -50,7 +52,7 @@ export function CompanyPage({ company: c }: { company: Company }) {
                 Email me <span aria-hidden="true" className="text-accent">↗</span>
               </a>
               <a
-                href={site.resume}
+                href={c.resume ?? site.resume}
                 target="_blank"
                 rel="noopener"
                 className="inline-flex items-center gap-2 rounded-xl border border-line px-4 py-2.5 text-sm text-muted transition hover:border-white/30 hover:text-fg"
@@ -75,8 +77,43 @@ export function CompanyPage({ company: c }: { company: Company }) {
           ))}
         </div>
 
+        {/* Proof of work */}
+        {c.proof && (
+          <Section index={next()} title={c.proof.title}>
+            <p className="max-w-3xl text-lg leading-relaxed text-muted">{c.proof.intro}</p>
+            <div className="mt-10 rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-8">
+              <dl className="grid gap-6 sm:grid-cols-3">
+                {c.proof.stats.map((s) => (
+                  <div key={s.label}>
+                    <dt className="font-serif text-5xl leading-none text-accent">{s.value}</dt>
+                    <dd className={`${label} mt-3 text-faint`}>{s.label}</dd>
+                  </div>
+                ))}
+              </dl>
+              <ul className="mt-8 space-y-3 leading-relaxed text-muted">
+                {c.proof.points.map((p) => (
+                  <li key={p} className="flex gap-4">
+                    <span className="mt-3 h-px w-4 shrink-0 bg-accent" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+              {c.proof.href && (
+              <a
+                href={c.proof.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-flex items-center gap-2 rounded-full border border-line px-5 py-2.5 text-sm text-fg transition hover:border-accent hover:text-accent"
+              >
+                {c.proof.linkLabel} <span aria-hidden>↗</span>
+              </a>
+              )}
+            </div>
+          </Section>
+        )}
+
         {/* Skills */}
-        <Section index="01" title="Why My Skills Match Your Work">
+        <Section index={next()} title="Why My Skills Match Your Work">
           <ul className="divide-y divide-line overflow-hidden rounded-2xl border border-line bg-glass backdrop-blur-sm">
             {c.requirements.map((r) => {
               const lvl = levelStyle[r.level];
@@ -96,7 +133,7 @@ export function CompanyPage({ company: c }: { company: Company }) {
         </Section>
 
         {/* Experience */}
-        <Section index="02" title="The Experience I Bring">
+        <Section index={next()} title="The Experience I Bring">
           <div className="grid gap-4 md:grid-cols-2">
             {c.pipeline.map((p) => (
               <article key={p.step} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
@@ -123,7 +160,7 @@ export function CompanyPage({ company: c }: { company: Company }) {
         </Section>
 
         {/* Plan */}
-        <Section index="03" title={`How I Would Approach ${c.short}'s Challenges`}>
+        <Section index={next()} title={`How I Would Approach ${c.short}${c.short.endsWith("s") ? "'" : "'s"} Challenges`}>
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {c.plan.map((p, i) => (
               <li key={p.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm">
@@ -136,7 +173,7 @@ export function CompanyPage({ company: c }: { company: Company }) {
         </Section>
 
         {/* Where I fit */}
-        <Section index="04" title={`Where I fit at ${c.short}`}>
+        <Section index={next()} title={`Where I fit at ${c.short}`}>
           <div className="grid gap-4 md:grid-cols-3">
             {c.fit.map((f) => (
               <article key={f.title} className="rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-7">
@@ -148,7 +185,7 @@ export function CompanyPage({ company: c }: { company: Company }) {
         </Section>
 
         {/* Why */}
-        <Section index="05" title={`Why ${c.short}`}>
+        <Section index={next()} title={`Why ${c.short}`}>
           <ul className="space-y-4 text-lg leading-relaxed text-muted">
             {c.why.map((w) => (
               <li key={w} className="flex gap-4">
@@ -159,7 +196,7 @@ export function CompanyPage({ company: c }: { company: Company }) {
           </ul>
         </Section>
 
-        <JapanPhotos index="06" />
+        {c.japan !== false && <JapanPhotos index={next()} />}
 
         {/* Contact */}
         <div className="mt-24 border-t border-line pt-10">

@@ -19,6 +19,19 @@ export type Company = {
   plan: { title: string; body: string }[];
   fit: { title: string; body: string }[];
   why: string[];
+  /** Optional: a resume tailored to this company (defaults to the general one). */
+  resume?: string;
+  /** Optional: show the "Learning Japan" photos (default true; off for non-Japanese companies). */
+  japan?: boolean;
+  /** Optional: a proof-of-work section shown first. */
+  proof?: {
+    title: string;
+    intro: string;
+    stats: { value: string; label: string }[];
+    points: string[];
+    href?: string;
+    linkLabel?: string;
+  };
 };
 
 const opener = "M.Tech Student (AI/ML research) at IIT Hyderabad, graduating in 2027, with 2+ years of research experience in computer vision, vision-language models and LLM systems.";
@@ -312,5 +325,130 @@ export const yamatoIndustrial: Company = {
     "A growing Hamamatsu manufacturer offers the chance to have a visible impact early in my career.",
     "Your range of work, from automotive parts to new products, suits my curiosity and willingness to learn.",
     "I want to build a long-term career in Japan, and I would be glad to start in Hamamatsu.",
+  ],
+};
+
+// pi-labs (Pune): deepfake detection, media forensics and investigation AI. No open role was posted,
+// so this page maps Ajay's work to their products as described on pi-labs.ai.
+export const piLabs: Company = {
+  company: "pi-labs",
+  short: "pi-labs",
+  location: "Pune, India",
+  subtitle: "Applying Computer Vision, Multimodal AI, and Rigorous Evaluation to Deepfake Detection and Forensic Intelligence.",
+  intro: `${opener} My work covers face analysis, detection and tracking in video, vision-language models and LLM retrieval, and I care about one question above all: does the model still work on data it has never seen? In deepfake detection every new generator is new data. I am from Maharashtra and would like to help build sovereign AI for India's investigators.`,
+  mailSubject: "AI Engineer at pi-labs",
+  planet: { from: "#8fd3ff", to: "#1b2f8a", ring: "#c9d4ea" },
+  resume: "/ajay-wanekar-resume-pi-labs.pdf",
+  japan: false,
+  stats: [
+    years,
+    papers,
+    vlms,
+    relevance,
+  ],
+  proof: {
+    title: "Vision-Language Models vs Specialist Face Models",
+    intro:
+      "At LFOVIA Lab, IIT Hyderabad, I fine-tuned and evaluated general vision-language models against task-specific models across face and scene tasks: the same question pi-labs faces when choosing between a large general model and a specialist detector for faces, video and evidence.",
+    stats: [
+      { value: "3", label: "VLMs fine-tuned and evaluated" },
+      { value: "3", label: "specialist baselines: RetinaFace, DeepFace, Siamese" },
+      { value: "5+", label: "vision tasks benchmarked" },
+    ],
+    points: [
+      "Fine-tuned and evaluated Florence-2 (Base and Large), Llama 3.2 Vision and Qwen2-VL with PyTorch and Hugging Face on object detection, segmentation, crowd analysis, action recognition and text recognition.",
+      "Benchmarked them against RetinaFace (face detection), DeepFace (face analysis) and Siamese networks (visual tracking and re-identification), measuring precision, recall and IoU in Python pipelines.",
+      "For pi-labs this maps to face search and tracking in pi-sense, face pipelines behind deepfake detection in pi-authentify, and knowing when a general VLM is good enough and when a specialist model is needed.",
+    ],
+  },
+  requirements: [
+    { need: "Deep learning for image and video analysis", level: "strong", proof: "VLM fine-tuning; YOLO + DeepSORT detection and tracking; 2 IEEE papers" },
+    { need: "Face analysis, verification and re-identification", level: "strong", proof: "Benchmarked RetinaFace, DeepFace and Siamese re-identification models (LFOVIA Lab)" },
+    { need: "Robustness to hard, noisy inputs", level: "strong", proof: "Sensor-specific near-infrared and sonar pipelines (2 IEEE papers); RRSI noise-aware evaluation" },
+    { need: "Python, PyTorch, Hugging Face, CUDA", level: "strong", proof: "Daily tools; GPU training and evaluation pipelines on Linux" },
+    { need: "LLMs, RAG and natural-language search", level: "strong", proof: "Hybrid semantic + keyword retrieval with LLM intent classification, +18% relevance" },
+    { need: "Evaluation rigour (AUC, EER, precision / recall)", level: "strong", proof: "Precision, recall, IoU, LOOCV; RRSI to check gains exceed experimental noise" },
+    { need: "Indian languages", level: "solid", proof: "Marathi, Hindi and English; multi-channel voice, chat and email AI platform" },
+    { need: "Deepfake and audio-forensics models", level: "growing", proof: "New domain for me; my face-analysis, multimodal and generalisation work transfers directly" },
+  ],
+  pipeline: [
+    {
+      step: "01",
+      title: "Expose the fake",
+      ask: "pi-authentify: deepfake detection for video, images and VideoKYC calls.",
+      evidence:
+        "Fine-tuned and evaluated Florence-2, Llama 3.2 Vision and Qwen2-VL for multimodal understanding, and benchmarked them against RetinaFace, DeepFace and Siamese networks for face analysis and re-identification (LFOVIA Lab).",
+      tags: ["Face analysis", "VLMs", "Hugging Face"],
+    },
+    {
+      step: "02",
+      title: "Hours of footage in minutes",
+      ask: "pi-sense: face, object and activity detection, plate OCR and face search in CCTV and bodycam video.",
+      evidence:
+        "Built real-time detection, multi-object tracking and position estimation of vehicles and pedestrians with YOLO and DeepSORT, tested in CARLA simulation (TIHAN), and evaluated VLMs for text recognition and crowd analysis.",
+      tags: ["YOLO", "DeepSORT", "OCR"],
+    },
+    {
+      step: "03",
+      title: "Ask the evidence",
+      ask: "pi-scout's Scout-GPT and pi-vox: natural-language search over case data and transcripts.",
+      evidence:
+        "Built a multi-tenant generative-AI platform across voice, chat and email, with a hybrid semantic + keyword retrieval pipeline and LLM-based intent classification that improved answer relevance by 18%.",
+      tags: ["RAG", "LLMs", "Hybrid retrieval"],
+    },
+    {
+      step: "04",
+      title: "Hard sensors, clean data",
+      ask: "Forensic-grade data pipelines for noisy, low-quality inputs.",
+      evidence:
+        "Curated near-infrared and sonar datasets with sensor-specific preprocessing, annotation and data-quality checks for robust detection in difficult conditions, published as two IEEE papers (TIHAN, WINET).",
+      tags: ["Data quality", "Annotation", "IEEE"],
+    },
+  ],
+  plan: [
+    {
+      title: "Start from the casework",
+      body: "Learn what investigators actually receive (compressed WhatsApp video, CCTV, phone calls, VideoKYC) and which mistakes cost most in court, before touching a model.",
+    },
+    {
+      title: "Test on the next generator",
+      body: "Hold out whole generators, datasets and devices when testing, so scores reflect deepfakes the model has never seen, not memorised artefacts.",
+    },
+    {
+      title: "Combine independent signals",
+      body: "Face and texture cues, frequency artefacts, audio-visual sync and metadata, fused into calibrated scores with explanations an analyst can put in a report.",
+    },
+    {
+      title: "Calibrate for each deployment",
+      body: "Recalibrate thresholds for each new camera source, channel or language using local data, then confirm with a small labelled check before go-live.",
+    },
+    {
+      title: "Prove gains are real",
+      body: "Repeat runs and noise-aware comparisons (the RRSI idea I use in my thesis) before claiming an improvement on a benchmark.",
+    },
+    {
+      title: "Close the loop with analysts",
+      body: "Low-confidence cases go to forensic analysts; their decisions become training and test data for the next release.",
+    },
+  ],
+  fit: [
+    {
+      title: "IIT Hyderabad rigour",
+      body: "Three IIT Hyderabad research labs, two IEEE papers, and a habit of testing on truly new data. Your research team publishes; I want to keep publishing too.",
+    },
+    {
+      title: "Made for Indian data",
+      body: "I speak Marathi, Hindi and English and have built multi-channel voice, chat and email AI, useful for pi-vox's Indian-language work and for testing on Indian faces and accents.",
+    },
+    {
+      title: "Close to Pune",
+      body: "From Chhatrapati Sambhajinagar, Maharashtra. Ready to work on-site in Aundh with your team, and with Maharashtra agencies such as MARVEL.",
+    },
+  ],
+  why: [
+    "Deepfakes are already hurting real people in India, in fraud, KYC and disinformation. Building tools that investigators can rely on in court is work that matters.",
+    "Sovereign, on-premise AI for security agencies is a hard engineering problem: models must be accurate, explainable and run inside the country's own infrastructure.",
+    "pi-labs combines products with research: patents, and papers at ICDF2C and IEEE venues. I want to grow as an engineer who ships and publishes.",
+    "A team of about 40 means an AI engineer owns problems end to end, from data to deployment, and that is how I like to work.",
   ],
 };
