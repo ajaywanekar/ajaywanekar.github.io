@@ -368,7 +368,8 @@ export const piLabs: Company = {
     { need: "Python, PyTorch, Hugging Face, CUDA", level: "strong", proof: "Daily tools; GPU training and evaluation pipelines on Linux" },
     { need: "LLMs, RAG and natural-language search", level: "strong", proof: "Hybrid semantic + keyword retrieval with LLM intent classification, +18% relevance" },
     { need: "Evaluation rigour (AUC, EER, precision / recall)", level: "strong", proof: "Precision, recall, IoU, LOOCV; RRSI to check gains exceed experimental noise" },
-    { need: "Indian languages", level: "solid", proof: "Marathi, Hindi and English; multi-channel voice, chat and email AI platform" },
+    { need: "Speech and voice models", level: "solid", proof: "Trained and tested various voice models (speech-to-text, text-to-speech) for a conversational AI platform (IIT Hyderabad Build Program)" },
+    { need: "Indian languages", level: "solid", proof: "Marathi, Hindi and English; multilingual voice, chat and email AI platform" },
     { need: "Deepfake and audio-forensics models", level: "growing", proof: "New domain for me; my face-analysis, multimodal and generalisation work transfers directly" },
   ],
   pipeline: [
@@ -390,11 +391,11 @@ export const piLabs: Company = {
     },
     {
       step: "03",
-      title: "Ask the evidence",
-      ask: "pi-scout's Scout-GPT and pi-vox: natural-language search over case data and transcripts.",
+      title: "Hear and ask the evidence",
+      ask: "pi-vox and pi-phonix speech, and pi-scout's Scout-GPT: transcripts, voices and natural-language search over case data.",
       evidence:
-        "Built a multi-tenant generative-AI platform across voice, chat and email, with a hybrid semantic + keyword retrieval pipeline and LLM-based intent classification that improved answer relevance by 18%.",
-      tags: ["RAG", "LLMs", "Hybrid retrieval"],
+        "In the IIT Hyderabad Build Program I built a multi-tenant conversational AI platform across voice, chat and email. For the voice channel I trained and tested various voice models (speech-to-text and text-to-speech), and a hybrid semantic + keyword retrieval pipeline with LLM intent classification improved answer relevance by 18%.",
+      tags: ["Voice models", "STT / TTS", "RAG"],
     },
     {
       step: "04",
@@ -438,7 +439,7 @@ export const piLabs: Company = {
     },
     {
       title: "Made for Indian data",
-      body: "I speak Marathi, Hindi and English and have built multi-channel voice, chat and email AI, useful for pi-vox's Indian-language work and for testing on Indian faces and accents.",
+      body: "I speak Marathi, Hindi and English and have trained and tested voice models for a multilingual conversational AI platform, useful for pi-vox's Indian-language work and for testing on Indian faces and accents.",
     },
     {
       title: "Close to Pune",
