@@ -453,3 +453,127 @@ export const piLabs: Company = {
     "A team of about 40 means an AI engineer owns problems end to end, from data to deployment, and that is how I like to work.",
   ],
 };
+
+// Digital Dolphins: the document and drawing management SaaS from the IT division of
+// 枚岡合金工具 (Hiraoka Hyper Tools, Osaka). Role: AI for manufacturing (OCR, CV, semantic search).
+export const digitalDolphins: Company = {
+  company: "Digital Dolphins (Hiraoka Hyper Tools)",
+  short: "Digital Dolphins",
+  location: "Osaka, Japan",
+  subtitle: "Applying OCR, Computer Vision, and Semantic Search to Turn Factory Documents and Drawings into Searchable Knowledge.",
+  intro: `${opener} Digital Dolphins already lets manufacturers find a document in 10 seconds. I would like to help build the next layer: AI that reads scanned forms and CAD drawings, extracts the right fields into structured data, and answers questions about them in plain language.`,
+  mailSubject: "AI Engineer, Digital Dolphins",
+  planet: { from: "#7fe0f0", to: "#0b4f7a", ring: "#c9d4ea" },
+  stats: [
+    { value: "3", label: "vision-language models fine-tuned and evaluated, including text recognition" },
+    relevance,
+    years,
+    papers,
+  ],
+  proof: {
+    title: "OCR and Semantic Search, Already Built in Parts",
+    intro:
+      "Your first projects are OCR on documents and drawings, and AI search over them. I have built both halves separately: reading text from images with vision-language models, and searching noisy text with a hybrid semantic and keyword pipeline. Joining them is the Digital Dolphins problem.",
+    stats: [
+      { value: "3", label: "VLMs evaluated for text recognition" },
+      { value: "+18%", label: "relevance from hybrid semantic + keyword search" },
+      { value: "5+", label: "vision tasks benchmarked" },
+    ],
+    points: [
+      "Reading (LFOVIA Lab, IIT Hyderabad): fine-tuned and evaluated Florence-2, Qwen2-VL and Llama 3.2 Vision for text recognition, object detection and segmentation, benchmarked against task-specific models with precision, recall and IoU.",
+      "Searching (IIT Hyderabad Build Program): built a multi-tenant generative-AI platform with a hybrid retrieval pipeline (semantic + keyword) and LLM-based intent classification that improved answer relevance by 18%.",
+      "Together: OCR extracts part numbers, materials and dates from a drawing or form, the fields are stored as structured data, and search finds a past drawing by its number, its text or a question in plain Japanese or English.",
+    ],
+  },
+  requirements: [
+    { need: "Python programming", level: "strong", proof: "Daily tool across every project; PyTorch, OpenCV, Pandas, SQL" },
+    { need: "Machine learning and data preparation", level: "strong", proof: "Built and cleaned sonar, near-infrared, RGB and depth datasets; ML thesis with LR, RF, XGBoost, GPR" },
+    { need: "OCR and document text extraction", level: "strong", proof: "Fine-tuned and evaluated VLMs for text recognition (LFOVIA Lab)" },
+    { need: "Computer vision for drawings and images", level: "strong", proof: "Detection and segmentation research; 2 IEEE papers on detection in difficult images" },
+    { need: "Semantic search", level: "strong", proof: "Hybrid semantic + keyword retrieval with LLM intent classification, +18% relevance" },
+    { need: "Software development for a SaaS product", level: "solid", proof: "Built a multi-tenant generative-AI platform (voice, chat, email); Linux, SQL" },
+    { need: "Analytical and problem-solving skills", level: "strong", proof: "Leave-One-Out cross-validation, RRSI checks that gains exceed noise; Top 10 All India, Meta x Pragati AI Hackathon" },
+    { need: "Willingness to learn precision mold manufacturing", level: "strong", proof: "Moved from marine perception to reactor modelling; eager to learn molds on the shop floor in Osaka" },
+    japanese,
+  ],
+  pipeline: [
+    {
+      step: "01",
+      title: "Read every document",
+      ask: "OCR that captures scanned forms, records and drawings into Digital Dolphins without manual entry.",
+      evidence:
+        "Evaluated and fine-tuned vision-language models for text recognition and multimodal text-image understanding, with preprocessing and quality-validation pipelines that make hard images readable (LFOVIA, TIHAN, WINET).",
+      tags: ["OCR", "VLMs", "Preprocessing"],
+    },
+    {
+      step: "02",
+      title: "Find a drawing by what it shows",
+      ask: "AI search for CAD drawings using computer vision and OCR: title blocks, part numbers, tables and shapes.",
+      evidence:
+        "Built detection and segmentation pipelines and benchmarked general vision-language models against task-specific models, the same choice as between a VLM and a dedicated drawing parser.",
+      tags: ["Computer vision", "Detection", "Benchmarking"],
+    },
+    {
+      step: "03",
+      title: "Ask in plain language",
+      ask: "Semantic search so staff can find documents with a question, not an exact file name.",
+      evidence:
+        "Built a hybrid semantic + keyword retrieval pipeline with LLM-based intent classification on a multi-tenant platform, improving answer relevance by 18%.",
+      tags: ["Semantic search", "RAG", "LLMs"],
+    },
+    {
+      step: "04",
+      title: "Structure expert knowledge",
+      ask: "Turning factory data and experienced workers' knowledge into structured, searchable records.",
+      evidence:
+        "Curated and annotated datasets with standardised preprocessing, labelling and quality checks, and modelled a physical process from only 24 experiments in my M.Tech thesis.",
+      tags: ["Data structuring", "Annotation", "Small data"],
+    },
+  ],
+  plan: [
+    {
+      title: "Learn the shop floor first",
+      body: "Spend time with mold engineers and Digital Dolphins customers to see which documents and drawings people search for, and why it takes time today.",
+    },
+    {
+      title: "Pick one search task",
+      body: "Start with a clear target, such as finding a past drawing by part number, material or customer in under 10 seconds, and measure it.",
+    },
+    {
+      title: "OCR the parts that matter",
+      body: "Detect title blocks and tables first, then read them with OCR tuned for Japanese and English, full-width and half-width characters, and store the fields.",
+    },
+    {
+      title: "Search in layers",
+      body: "Exact match, then keyword, then semantic and image similarity, with each result showing why it matched, so users trust it.",
+    },
+    {
+      title: "Keep the SaaS simple",
+      body: "Separate each customer's data, keep processing costs predictable, and ship small improvements that work inside the existing Digital Dolphins workflow.",
+    },
+    {
+      title: "Then predict and inspect",
+      body: "Use machine data from 現場の妖精 for predictive maintenance, then defect detection and AI agents once the document and search base is solid.",
+    },
+  ],
+  fit: [
+    {
+      title: "Information, not paper",
+      body: "Your founding idea, that what matters is the information on a drawing rather than the paper, is the core of my work: turning messy images and text into usable information.",
+    },
+    {
+      title: "Ready for a team of four",
+      body: "I have built a multi-tenant AI platform end to end and am used to owning a problem from data to working system, which a small product team needs.",
+    },
+    {
+      title: "A bridge to Indian talent",
+      body: "An IIT Hyderabad engineer who speaks English, Hindi and Marathi and is learning Japanese, ready to work in Osaka and help as you hire more engineers from India.",
+    },
+  ],
+  why: [
+    "Digital Dolphins was born on a real shop floor and is used by manufacturers every day. Adding AI to a product with real users is the work I want to do.",
+    "Your spirit that everyone builds their own tools, from HyperCard in 1988 to Digital Dolphins today, is how I like to work.",
+    "OCR, computer vision and semantic search are exactly where my research sits, and manufacturing gives them a clear, measurable purpose.",
+    "I want to build a long-term career in Japan, and a small team in Osaka is a place where I can learn fast and have a visible impact.",
+  ],
+};
