@@ -464,7 +464,7 @@ export const digitalDolphins: Company = {
   intro: `${opener} Digital Dolphins already lets manufacturers find a document in 10 seconds. I would like to help build the next layer: AI that reads scanned forms and CAD drawings, extracts the right fields into structured data, and answers questions about them in plain language.`,
   mailSubject: "AI Engineer, Digital Dolphins",
   planet: { from: "#7fe0f0", to: "#0b4f7a", ring: "#c9d4ea" },
-  resume: "/ajay-wanekar-resume-digital-dolphins.pdf",
+  resume: "/ajay-wanekar-resume-dd.pdf",
   stats: [
     { value: "3", label: "vision-language models fine-tuned and evaluated, including text recognition" },
     relevance,
