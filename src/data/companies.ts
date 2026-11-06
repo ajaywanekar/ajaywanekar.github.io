@@ -578,3 +578,259 @@ export const digitalDolphins: Company = {
     "I want to build a long-term career in Japan, and a small team in Osaka is a place where I can learn fast and have a visible impact.",
   ],
 };
+
+// Philips: Data Scientist, Computer Vision (Bengaluru). Built from the job description:
+// CV and deep learning, GenAI / NLP / RAG, classical ML and statistics, productionisation.
+export const philips: Company = {
+  company: "Philips",
+  short: "Philips",
+  location: "Bengaluru, India",
+  subtitle: "Applying Computer Vision, Generative AI, and Statistically Rigorous Data Science to Health Technology.",
+  intro: `${opener} I turn a real-world question into a data science problem, build the model, and then prove it holds up on data it has never seen. I would like to bring that to Philips, where a model has to work for every person, device and setting, not only the ones in the training set.`,
+  mailSubject: "Data Scientist, Computer Vision at Philips",
+  planet: { from: "#8fc5ff", to: "#0b3a8a", ring: "#c9d4ea" },
+  resume: "/ajay-wanekar-resume-philips.pdf",
+  japan: false,
+  stats: [
+    { value: "95.2%", label: "accuracy on an unseen region, vs 90.2% for the dataset authors' best model" },
+    years,
+    papers,
+    relevance,
+  ],
+  proof: {
+    title: "A Model That Holds Up on New Data",
+    intro:
+      "An open study I built end to end on public data: classify asbestos-cement roofs from 8-band satellite spectra, trained in one region and tested in another. It covers the whole data scientist loop the role describes: frame the problem, engineer features, compare classical and modern models, test statistically, and publish reproducible code.",
+    stats: [
+      { value: "95.2%", label: "accuracy in the unseen region (F1 0.955)" },
+      { value: "0.984", label: "AUC from brightness-robust spectral features" },
+      { value: "5", label: "model families compared: RF, XGBoost, SVM, LR, GMM" },
+    ],
+    points: [
+      "Framed the question as a domain-shift problem: standard models fell to 80 to 91% in the new region because scene brightness changed, not the roofs.",
+      "Engineered spectral-shape features (band ratios, normalised differences) and compared Random Forest, XGBoost, SVM and logistic regression, then fitted the decision threshold to the new region's unlabelled scores with a two-component Gaussian mixture, using no new labels.",
+      "For Philips this is the everyday question of a model trained on one device, hospital or market and used on another: measure the shift, fix it with data, and report numbers that can be trusted.",
+    ],
+    href: "https://github.com/ajaywanekar/asbestos-ai-study",
+    linkLabel: "View the code on GitHub",
+  },
+  requirements: [
+    { need: "Computer vision, OpenCV and image processing", level: "strong", proof: "Three IIT Hyderabad vision labs; near-infrared, sonar, RGB and depth image pipelines; 2 IEEE papers" },
+    { need: "Deep learning for detection and segmentation (YOLO)", level: "strong", proof: "YOLO detection and DeepSORT tracking (TIHAN); detection and segmentation benchmarked with fine-tuned VLMs (LFOVIA)" },
+    python,
+    { need: "Classical ML: regression, Random Forest, SVM", level: "strong", proof: "Linear Regression, Random Forest, XGBoost, GPR (thesis); RF, SVM, logistic regression (roof study)" },
+    { need: "Statistical testing and experimental analysis", level: "strong", proof: "Leave-One-Out cross-validation; RRSI checks that gains exceed experimental noise; Gaussian-mixture thresholding" },
+    { need: "NLP, Transformers, LLMs and RAG", level: "strong", proof: "Hybrid semantic + keyword retrieval with LLM intent classification, +18% relevance; VLM fine-tuning" },
+    { need: "Data preparation, validation and quality control", level: "strong", proof: "Built sonar, near-infrared, RGB and depth datasets with annotation and quality-validation pipelines" },
+    { need: "Reproducible experiments and documentation", level: "strong", proof: "Open-source study with code, results table and write-up on GitHub; two published papers" },
+    { need: "Deployment and integration with engineering teams", level: "solid", proof: "Built a multi-tenant AI platform (voice, chat, email) end to end; GPU training pipelines on Linux" },
+  ],
+  pipeline: [
+    {
+      step: "01",
+      title: "Frame the problem",
+      ask: "Translate consumer, product and business challenges into well-defined data science problems and proofs of concept.",
+      evidence:
+        "Turned roof surveys into a spectral classification problem under regional shift, and a plasma reactor into a regression problem with only 24 experiments (cross-validated R² up to 0.996).",
+      tags: ["Problem framing", "PoC", "Small data"],
+    },
+    {
+      step: "02",
+      title: "See it in images",
+      ask: "Computer vision applications with YOLO, U-Net style models, image processing and robust training and evaluation pipelines.",
+      evidence:
+        "Built YOLO and DeepSORT detection and tracking, near-infrared and sonar preprocessing for hard imaging conditions (2 IEEE papers), and benchmarked Florence-2, Qwen2-VL and Llama 3.2 Vision against RetinaFace, DeepFace and Siamese networks with precision, recall and IoU.",
+      tags: ["YOLO", "OpenCV", "VLMs"],
+    },
+    {
+      step: "03",
+      title: "Read and answer",
+      ask: "LLMs, Transformers and RAG to extract information from unstructured data, evaluated for quality and reliability.",
+      evidence:
+        "Built a multi-tenant generative-AI platform with a hybrid semantic + keyword retrieval pipeline and LLM intent classification that improved answer relevance by 18%, and trained and tested voice models for its speech channel.",
+      tags: ["RAG", "LLMs", "Transformers"],
+    },
+    {
+      step: "04",
+      title: "Prove it, then ship it",
+      ask: "Statistical testing, reproducible methodology, deployment with engineering teams and monitoring of model performance.",
+      evidence:
+        "Use cross-validation and noise-aware comparisons (RRSI) before claiming a gain, and publish code and results so others can rerun them, as in the open roof study.",
+      tags: ["Statistics", "Reproducibility", "Monitoring"],
+    },
+  ],
+  plan: [
+    {
+      title: "Start with the people",
+      body: "Learn who uses the product, what decision the model supports, and which mistake costs most, before choosing a model.",
+    },
+    {
+      title: "Know the data first",
+      body: "Exploratory analysis, label audits and quality checks across devices, skin tones, lighting and sites, so gaps are found before training, not after launch.",
+    },
+    {
+      title: "Simple baseline, then deep",
+      body: "A classical baseline (features with Random Forest or SVM) sets the bar; YOLO, U-Net or a VLM must beat it by more than the noise to earn its cost.",
+    },
+    {
+      title: "Test on new conditions",
+      body: "Hold out whole devices, sites or user groups so scores reflect the real world, and report confidence intervals, not single numbers.",
+    },
+    {
+      title: "Ship with the engineers",
+      body: "Agree on input formats, latency and memory with the engineering team early, and package models so integration into the product is routine.",
+    },
+    {
+      title: "Watch it after launch",
+      body: "Monitor input drift and accuracy in production, and feed hard cases back into the next training round.",
+    },
+  ],
+  fit: [
+    {
+      title: "Vision plus GenAI",
+      body: "The role spans computer vision, NLP, LLMs and classical ML. My work already covers all four, from YOLO and VLMs to RAG and Random Forests.",
+    },
+    {
+      title: "Honest numbers",
+      body: "In health technology a model that only works on its test set is a risk. Testing on unseen data and checking gains against noise is how I work by default.",
+    },
+    {
+      title: "Ready for Bengaluru",
+      body: "An IIT Hyderabad engineer who speaks English, Hindi and Marathi, ready to work from the Bengaluru office with your data, software and product teams.",
+    },
+  ],
+  why: [
+    "Philips builds technology that reaches people's health every day. Computer vision that helps someone get better care is work that matters.",
+    "The role combines vision, generative AI and statistics in one job, which is exactly the mix of my research so far.",
+    "Philips takes models from proof of concept to products used at scale, and I want to learn how that is done well.",
+    "Working with experienced data scientists and engineers in Bengaluru is where I can grow fastest and contribute from the start.",
+  ],
+};
+
+// KLA: Product Applications Engineer (Chennai). Built from the job description:
+// fab data analysis, root cause, process control and yield, ML scripting, customer work, papers.
+export const kla: Company = {
+  company: "KLA",
+  short: "KLA",
+  location: "Chennai, India",
+  subtitle: "Applying Data Analysis, Machine Learning, and Process Modelling to Defect Reduction and Yield Improvement.",
+  intro: `${opener} My M.Tech thesis models a plasma reactor from its operating conditions with only 24 experiments, my research detects small objects in noisy images, and in the IIT Hyderabad Build Program I led a team of 5 to take an AI product from idea to working prototype. I would like to bring both to KLA's customers: find the root cause in the fab data, cut killer defects, and write down what works so every team can use it.`,
+  mailSubject: "Product Applications Engineer at KLA",
+  planet: { from: "#a9d8ff", to: "#123a6e", ring: "#ffd28a" },
+  resume: "/ajay-wanekar-resume-kla.pdf",
+  japan: false,
+  stats: [
+    r2,
+    { value: "95.2%", label: "accuracy after a shift to unseen conditions, in an open ML study" },
+    relevance,
+    papers,
+  ],
+  proof: {
+    title: "From Process Data to Process Control",
+    intro:
+      "My M.Tech thesis at IIT Hyderabad: predict how a dielectric barrier discharge (DBD) plasma reactor performs from its operating conditions, with only 24 experiments. Plasma is also the workhorse of wafer etch and deposition, and the problem has the same shape as fab work: few expensive runs, many process knobs, and a need to know which knob drives the result.",
+    stats: [
+      { value: "0.996", label: "cross-validated R² (Gaussian Process Regression)" },
+      { value: "24", label: "experiments: every data point counts" },
+      { value: "6", label: "process outputs predicted" },
+    ],
+    points: [
+      "Benchmarked Linear Regression, Random Forest, XGBoost and Gaussian Process Regression to predict methane conversion and H₂ and C₂ to C₄ selectivities, validated with Leave-One-Out cross-validation.",
+      "Used feature-importance analysis to find which operating conditions drive each output, and studied extrapolation and confounding limits so the conclusions stay inside what the data supports.",
+      "For KLA this is root-cause and process-control work: rank the process variables behind a yield or defect excursion, check the finding is larger than run-to-run noise (the RRSI method I adapted), and suggest the next experiment with Bayesian Optimization.",
+    ],
+  },
+  requirements: [
+    { need: "Strong data analytics and logical thinking", level: "strong", proof: "ML thesis on process data; open study beating the published baseline (95.2% vs 90.2%)" },
+    { need: "Root-cause analysis of process data", level: "strong", proof: "Feature importance, confounding and extrapolation analysis on reactor operating data" },
+    { need: "Machine learning scripts in Python (and Perl)", level: "strong", proof: "Python daily for every ML and data pipeline (scikit-learn, XGBoost, PyTorch, Pandas) on Linux" },
+    { need: "Defect detection in inspection images", level: "strong", proof: "Detection of small objects in noisy sonar and near-infrared images (2 IEEE papers); YOLO and VLM benchmarking" },
+    { need: "Basic semiconductor knowledge", level: "solid", proof: "B.E. Electrical Engineering (devices and circuits); plasma process modelling in my M.Tech" },
+    { need: "Master's in Electrical or related engineering", level: "strong", proof: "B.E. Electrical Engineering; M.Tech Energy Science and Technology, IIT Hyderabad" },
+    { need: "Hands-on lab work", level: "solid", proof: "Research across three IIT Hyderabad labs, building datasets from sonar, near-infrared, RGB and depth sensors" },
+    { need: "Papers, BKM documents and training material", level: "strong", proof: "2 IEEE conference papers; Teaching Assistant at IIT Hyderabad; open study with a full write-up" },
+    { need: "Self-driven team player with organisational skills", level: "strong", proof: "Led a team of 5 in the IIT Hyderabad Build Program from idea to working prototype: set priorities, split the work and ran several workstreams at once" },
+    { need: "Customer engagement and pre- and post-sales support", level: "strong", proof: "IIT Hyderabad Build Program: defined the problem with users, built a multi-tenant AI platform (voice, chat, email) for each customer's use case and fixed issues as they came in" },
+    { need: "Frequent travel to customer sites", level: "strong", proof: "Ready to travel more than 80% and to work on-site with customer fab teams" },
+  ],
+  pipeline: [
+    {
+      step: "01",
+      title: "Gather the fab data",
+      ask: "Work with customer teams on site to collect and analyse fab data: inspection results, tool logs and process parameters.",
+      evidence:
+        "Built and cleaned datasets from scratch across sonar, near-infrared, RGB and depth sensors, with preprocessing, annotation and quality checks before any model was trained (WINET, TIHAN, LFOVIA).",
+      tags: ["Data collection", "Data quality", "Python"],
+    },
+    {
+      step: "02",
+      title: "Find the root cause",
+      ask: "Understand the root causes of process errors and turn them into process control solutions.",
+      evidence:
+        "Modelled a plasma reactor from 24 experiments (cross-validated R² up to 0.996), ranked the operating conditions behind each output, and checked that gains exceed experimental noise.",
+      tags: ["Root cause", "Regression", "LOOCV"],
+    },
+    {
+      step: "03",
+      title: "Catch killer defects",
+      ask: "Reduce killer defects and improve yield; customise ML scripts to improve data analysis results.",
+      evidence:
+        "Detected small objects in noisy, low-contrast sonar and near-infrared images (2 IEEE papers), and kept a classifier accurate after a shift to unseen conditions (95.2% vs 90.2%), the same problem as matching results across tools and fabs.",
+      tags: ["Detection", "YOLO", "Domain shift"],
+    },
+    {
+      step: "04",
+      title: "Lead, support the customer, write it down",
+      ask: "Define problem statements with customers, resolve their issues, support new product introduction, and write BKMs, training material and papers.",
+      evidence:
+        "In the IIT Hyderabad Build Program I led a team of 5 from idea to working prototype: a multi-tenant AI platform across voice, chat and email, set up for each customer's use case, with a hybrid retrieval pipeline that improved answer relevance by 18%. I have also published two IEEE papers and teach as a Teaching Assistant.",
+      tags: ["Team lead", "Idea to prototype", "BKM"],
+    },
+  ],
+  plan: [
+    {
+      title: "Learn the tools and the fab",
+      body: "Learn KLA's inspection and metrology tools and the customer's process flow first, from the people who run them every day.",
+    },
+    {
+      title: "Agree the problem",
+      body: "Define each problem with the customer as a clear, measurable target, such as a defect type, a layer and a yield number, before analysing anything.",
+    },
+    {
+      title: "Clean data before models",
+      body: "Align wafer maps, inspection results and process logs, and check for missing lots, tool changes and labelling errors first.",
+    },
+    {
+      title: "Simple models first",
+      body: "Start with plots and interpretable models to rank the likely causes; use heavier ML only when it clearly adds something.",
+    },
+    {
+      title: "Prove it on new lots",
+      body: "Confirm every finding on lots it was not built from, and check the gain is bigger than normal run-to-run variation, before changing a recipe.",
+    },
+    {
+      title: "Leave a BKM behind",
+      body: "Write each solution up as a best known method with scripts and training notes, so the next customer and the next engineer start ahead.",
+    },
+  ],
+  fit: [
+    {
+      title: "Engineer plus data",
+      body: "Electrical engineering and plasma process modelling on one side, machine learning and data analysis on the other. Applications engineering needs both.",
+    },
+    {
+      title: "Ready for the field",
+      body: "Happy to travel more than 80% and work on-site with customer teams. I speak English, Hindi and Marathi and am based in South India today.",
+    },
+    {
+      title: "Led a team, idea to prototype",
+      body: "In the IIT Hyderabad Build Program I led a team of 5: shaped the idea, set priorities, split the work and delivered a working prototype for real users. Two IEEE papers show I can also write it up and publish.",
+    },
+  ],
+  why: [
+    "Almost every electronic device depends on KLA's technology. Helping a fab find and remove a killer defect has a direct, measurable effect on yield.",
+    "India is building its first semiconductor fabs, and I want to grow with the industry from the start, close to the process and the data.",
+    "The role mixes hard data problems, customer work and publishing, which is how I like to learn: on real problems, with real data.",
+    "KLA invests heavily in R&D and works with the world's leading chipmakers, so every project is a chance to learn from the best.",
+  ],
+};
