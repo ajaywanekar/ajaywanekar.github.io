@@ -842,7 +842,7 @@ export const fischerJordan: Company = {
   short: "FischerJordan",
   location: "Remote, working with US clients",
   subtitle: "Applying Data Analysis, Machine Learning, and LLMs to Real Business Problems for FischerJordan's Clients.",
-  intro: `${opener} I like problems that start as a business question: frame it, find and clean the data, build the analysis or model, and turn the result into a recommendation someone can act on. I have done that end to end with an AI product of my own, and I would like to do it for FischerJordan's clients.`,
+  intro: `${opener} I like problems that start as a business question: frame it, find and clean the data, build the analysis or model, and turn the result into a recommendation someone can act on. I have done that end to end with an AI product I led in the IIT Hyderabad Build Program, and I would like to do it for FischerJordan's clients.`,
   mailSubject: "Sr. Analyst at FischerJordan",
   planet: { from: "#e8cf8a", to: "#7a5a12", ring: "#c9d4ea" },
   resume: "/ajay-wanekar-resume-fischerjordan.pdf",
@@ -851,34 +851,32 @@ export const fischerJordan: Company = {
     { value: "95.2%", label: "accuracy in an open data study, vs 90.2% for the published benchmark" },
     relevance,
     r2,
-    { value: "5", label: "people led to take an AI product from idea to a live platform" },
+    { value: "5", label: "people led to take an AI platform from idea to a working product" },
   ],
   proof: {
-    title: "From a Business Problem to a Live AI Product",
+    title: "From a Business Problem to a Working AI Product",
     intro:
-      "LightSpeak.ai, built in the IIT Hyderabad Build Program: businesses were losing customers because questions on phone, email and messaging went unanswered. I framed the problem, led a team of 5, and shipped a platform of AI agents that resolve those queries, now used by partners including IIT Hyderabad and ITIC Incubator. It is the FischerJordan loop in one project: business need, data, model, recommendation, implementation.",
+      "An AI customer-engagement platform built in the IIT Hyderabad Build Program: businesses were losing customers because questions on phone, email and messaging went unanswered. I framed the problem, led a team of 5, and built a platform of AI agents that resolve those queries. It is the FischerJordan loop in one project: business need, data, model, recommendation, implementation.",
     stats: [
       { value: "+18%", label: "answer relevance from a hybrid RAG pipeline" },
       { value: "4", label: "channels: voice, email, WhatsApp and chat" },
-      { value: "5", label: "team members led from idea to live product" },
+      { value: "5", label: "team members led from idea to working product" },
     ],
     points: [
-      "Framed the problem with users and partners, and defined the product around what they actually needed answered.",
+      "Framed the problem with users, and defined the product around what they actually needed answered.",
       "Built a hybrid retrieval pipeline (semantic + keyword) with LLM intent classification, and compared various LLMs on quality, latency and cost before choosing.",
       "Designed pay-as-you-go pricing with a per-session credit ledger and usage dashboards, so adoption and unit economics are measured, not guessed.",
     ],
-    href: "https://lightspeak.ai",
-    linkLabel: "Visit LightSpeak.ai",
   },
   requirements: [
     { need: "Strong programming in Python and SQL", level: "strong", proof: "Daily Python for data and ML pipelines (Pandas, NumPy, Scikit-learn); SQL" },
     { need: "Data extraction, preparation and validation", level: "strong", proof: "Sourced, cleaned and validated sonar, near-infrared, RGB and depth datasets with quality checks" },
-    { need: "LLMs and generative AI for business problems", level: "strong", proof: "Built a live LLM product with RAG and intent classification, +18% relevance" },
+    { need: "LLMs and generative AI for business problems", level: "strong", proof: "Built an LLM platform with RAG and intent classification, +18% relevance" },
     { need: "Predictive models and quantitative analysis", level: "strong", proof: "Regression, Random Forest, XGBoost, Gaussian Processes; R² up to 0.996 from 24 experiments" },
     { need: "Analytical skills and attention to detail", level: "strong", proof: "Found why models failed in a new region and fixed it: 95.2% vs 90.2% benchmark" },
     { need: "Clear, actionable presentations and writing", level: "strong", proof: "Two IEEE papers; benchmark results turned into model recommendations at LFOVIA Lab" },
-    { need: "Handling multiple work streams", level: "strong", proof: "Led voice, email, chat and knowledge workstreams in parallel for LightSpeak.ai" },
-    { need: "Entrepreneurial spirit and ownership", level: "strong", proof: "Took LightSpeak.ai from idea to a live platform in the IIT Hyderabad Build Program" },
+    { need: "Handling multiple work streams", level: "strong", proof: "Led voice, email, chat and knowledge workstreams in parallel in the IIT Hyderabad Build Program" },
+    { need: "Entrepreneurial spirit and ownership", level: "strong", proof: "Took an AI platform from idea to a working product in the IIT Hyderabad Build Program" },
     { need: "Working in US hours, remote", level: "strong", proof: "Ready to work US time zones and the 55-60 hour weeks the role describes" },
   ],
   pipeline: [
@@ -887,7 +885,7 @@ export const fischerJordan: Company = {
       title: "Frame the question",
       ask: "Work with clients to identify the business need and frame a solution approach.",
       evidence:
-        "Framed LightSpeak.ai around one measurable problem (customer queries going unanswered) before building anything, and framed my thesis as predicting reactor performance to cut costly experiments.",
+        "Framed the Build Program platform around one measurable problem (customer queries going unanswered) before building anything, and framed my thesis as predicting reactor performance to cut costly experiments.",
       tags: ["Problem framing", "Client needs"],
     },
     {
@@ -903,7 +901,7 @@ export const fischerJordan: Company = {
       title: "Analyse and model",
       ask: "Quantitative analysis, predictive models, and LLM and generative AI tools for business problems.",
       evidence:
-        "Predictive models with cross-validation (R² up to 0.996), a 95.2% classifier that beat the published benchmark, and an LLM product with RAG that raised answer relevance by 18%.",
+        "Predictive models with cross-validation (R² up to 0.996), a 95.2% classifier that beat the published benchmark, and an LLM platform with RAG that raised answer relevance by 18%.",
       tags: ["Predictive models", "LLMs", "RAG"],
     },
     {
@@ -911,7 +909,7 @@ export const fischerJordan: Company = {
       title: "Recommend and implement",
       ask: "Present actionable recommendations, measure results, and partner with clients on implementation.",
       evidence:
-        "Turned benchmark results into clear model recommendations at LFOVIA Lab, published two IEEE papers, and implemented LightSpeak.ai with real partners, tracking usage on dashboards.",
+        "Turned benchmark results into clear model recommendations at LFOVIA Lab, published two IEEE papers, and built usage dashboards to track the Build Program platform.",
       tags: ["Presentations", "Implementation"],
     },
   ],
@@ -944,11 +942,11 @@ export const fischerJordan: Company = {
   fit: [
     {
       title: "Analyst and builder",
-      body: "I can analyse data and also build the tool around it, from a SQL query to a live LLM product. FischerJordan's mix of analysis, modelling and generative AI fits that.",
+      body: "I can analyse data and also build the tool around it, from a SQL query to a working LLM platform. FischerJordan's mix of analysis, modelling and generative AI fits that.",
     },
     {
       title: "Entrepreneurial",
-      body: "Leading LightSpeak.ai taught me to own a problem end to end and to care about results, not just models. Your revenue-sharing model rewards exactly that.",
+      body: "Leading a team in the IIT Hyderabad Build Program taught me to own a problem end to end and to care about results, not just models. Your revenue-sharing model rewards exactly that.",
     },
     {
       title: "Ready for US hours",
