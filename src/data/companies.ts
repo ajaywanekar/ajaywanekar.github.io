@@ -834,3 +834,131 @@ export const kla: Company = {
     "KLA invests heavily in R&D and works with the world's leading chipmakers, so every project is a chance to learn from the best.",
   ],
 };
+
+// FischerJordan: Sr. Analyst (Data Analyst track), remote, US clients. Built from the job description:
+// Python and SQL analysis, LLMs and generative AI for business problems, predictive models, client work.
+export const fischerJordan: Company = {
+  company: "FischerJordan",
+  short: "FischerJordan",
+  location: "Remote, working with US clients",
+  subtitle: "Applying Data Analysis, Machine Learning, and LLMs to Real Business Problems for FischerJordan's Clients.",
+  intro: `${opener} I like problems that start as a business question: frame it, find and clean the data, build the analysis or model, and turn the result into a recommendation someone can act on. I have done that end to end with an AI product of my own, and I would like to do it for FischerJordan's clients.`,
+  mailSubject: "Sr. Analyst at FischerJordan",
+  planet: { from: "#e8cf8a", to: "#7a5a12", ring: "#c9d4ea" },
+  resume: "/ajay-wanekar-resume-fischerjordan.pdf",
+  japan: false,
+  stats: [
+    { value: "95.2%", label: "accuracy in an open data study, vs 90.2% for the published benchmark" },
+    relevance,
+    r2,
+    { value: "5", label: "people led to take an AI product from idea to a live platform" },
+  ],
+  proof: {
+    title: "From a Business Problem to a Live AI Product",
+    intro:
+      "LightSpeak.ai, built in the IIT Hyderabad Build Program: businesses were losing customers because questions on phone, email and messaging went unanswered. I framed the problem, led a team of 5, and shipped a platform of AI agents that resolve those queries, now used by partners including IIT Hyderabad and ITIC Incubator. It is the FischerJordan loop in one project: business need, data, model, recommendation, implementation.",
+    stats: [
+      { value: "+18%", label: "answer relevance from a hybrid RAG pipeline" },
+      { value: "4", label: "channels: voice, email, WhatsApp and chat" },
+      { value: "5", label: "team members led from idea to live product" },
+    ],
+    points: [
+      "Framed the problem with users and partners, and defined the product around what they actually needed answered.",
+      "Built a hybrid retrieval pipeline (semantic + keyword) with LLM intent classification, and compared various LLMs on quality, latency and cost before choosing.",
+      "Designed pay-as-you-go pricing with a per-session credit ledger and usage dashboards, so adoption and unit economics are measured, not guessed.",
+    ],
+    href: "https://lightspeak.ai",
+    linkLabel: "Visit LightSpeak.ai",
+  },
+  requirements: [
+    { need: "Strong programming in Python and SQL", level: "strong", proof: "Daily Python for data and ML pipelines (Pandas, NumPy, Scikit-learn); SQL" },
+    { need: "Data extraction, preparation and validation", level: "strong", proof: "Sourced, cleaned and validated sonar, near-infrared, RGB and depth datasets with quality checks" },
+    { need: "LLMs and generative AI for business problems", level: "strong", proof: "Built a live LLM product with RAG and intent classification, +18% relevance" },
+    { need: "Predictive models and quantitative analysis", level: "strong", proof: "Regression, Random Forest, XGBoost, Gaussian Processes; R² up to 0.996 from 24 experiments" },
+    { need: "Analytical skills and attention to detail", level: "strong", proof: "Found why models failed in a new region and fixed it: 95.2% vs 90.2% benchmark" },
+    { need: "Clear, actionable presentations and writing", level: "strong", proof: "Two IEEE papers; benchmark results turned into model recommendations at LFOVIA Lab" },
+    { need: "Handling multiple work streams", level: "strong", proof: "Led voice, email, chat and knowledge workstreams in parallel for LightSpeak.ai" },
+    { need: "Entrepreneurial spirit and ownership", level: "strong", proof: "Took LightSpeak.ai from idea to a live platform in the IIT Hyderabad Build Program" },
+    { need: "Working in US hours, remote", level: "strong", proof: "Ready to work US time zones and the 55-60 hour weeks the role describes" },
+  ],
+  pipeline: [
+    {
+      step: "01",
+      title: "Frame the question",
+      ask: "Work with clients to identify the business need and frame a solution approach.",
+      evidence:
+        "Framed LightSpeak.ai around one measurable problem (customer queries going unanswered) before building anything, and framed my thesis as predicting reactor performance to cut costly experiments.",
+      tags: ["Problem framing", "Client needs"],
+    },
+    {
+      step: "02",
+      title: "Get and clean the data",
+      ask: "Find information sources, understand data structures, and extract, validate and combine data.",
+      evidence:
+        "Built datasets from scratch across sonar, near-infrared, RGB and depth sensors, with standardised preprocessing, annotation and data-quality checks (TIHAN, WINET, LFOVIA).",
+      tags: ["Python", "SQL", "Data quality"],
+    },
+    {
+      step: "03",
+      title: "Analyse and model",
+      ask: "Quantitative analysis, predictive models, and LLM and generative AI tools for business problems.",
+      evidence:
+        "Predictive models with cross-validation (R² up to 0.996), a 95.2% classifier that beat the published benchmark, and an LLM product with RAG that raised answer relevance by 18%.",
+      tags: ["Predictive models", "LLMs", "RAG"],
+    },
+    {
+      step: "04",
+      title: "Recommend and implement",
+      ask: "Present actionable recommendations, measure results, and partner with clients on implementation.",
+      evidence:
+        "Turned benchmark results into clear model recommendations at LFOVIA Lab, published two IEEE papers, and implemented LightSpeak.ai with real partners, tracking usage on dashboards.",
+      tags: ["Presentations", "Implementation"],
+    },
+  ],
+  plan: [
+    {
+      title: "Start from the client's decision",
+      body: "Ask what decision the analysis will change and how success will be measured, before touching the data.",
+    },
+    {
+      title: "Map the data first",
+      body: "Find every source, read the data dictionaries, and check joins, gaps and definitions before modelling anything.",
+    },
+    {
+      title: "Simple answer first",
+      body: "A clear SQL query, pivot or regression often answers the question. Use machine learning or LLMs only when they add something measurable.",
+    },
+    {
+      title: "Use LLMs where they pay",
+      body: "Summarising documents, extracting fields from unstructured text, classifying feedback and drafting reports, always checked against the source.",
+    },
+    {
+      title: "Make it actionable",
+      body: "End every analysis with a recommendation, the expected impact, and what to measure after implementation.",
+    },
+    {
+      title: "Automate the repeat work",
+      body: "Turn recurring analyses into Python and SQL pipelines or clean Excel and Sheets models the client can keep using.",
+    },
+  ],
+  fit: [
+    {
+      title: "Analyst and builder",
+      body: "I can analyse data and also build the tool around it, from a SQL query to a live LLM product. FischerJordan's mix of analysis, modelling and generative AI fits that.",
+    },
+    {
+      title: "Entrepreneurial",
+      body: "Leading LightSpeak.ai taught me to own a problem end to end and to care about results, not just models. Your revenue-sharing model rewards exactly that.",
+    },
+    {
+      title: "Ready for US hours",
+      body: "Comfortable working remotely in US time zones, handling several work streams at once, and communicating clearly in writing.",
+    },
+  ],
+  why: [
+    "FischerJordan sits between data, technology and business strategy, which is where I want to build my career.",
+    "Using LLMs to redefine business models, not only to automate tasks, is the most interesting work in analytics right now.",
+    "Working directly with clients means seeing whether an analysis actually changed a decision, which is the feedback I want.",
+    "A small, entrepreneurial firm where analysts own real client problems is where I can learn fastest and contribute from the start.",
+  ],
+};
