@@ -27,8 +27,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run build
-      # Removed pages (and any unknown link) show a blank page: no name, no menu.
-      - run: printf '<!doctype html><html><head><meta charset="utf-8"><meta name="robots" content="noindex"><title></title></head><body></body></html>' > out/404.html
+      # No custom 404 page: removed or unknown links get GitHub's plain "File not found".
+      - run: rm -f out/404.html out/404/index.html
       - uses: actions/upload-pages-artifact@v4
         with:
           path: out
