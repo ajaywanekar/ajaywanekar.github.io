@@ -39,8 +39,8 @@ export const statement =
 
 export const areas: { id: AreaId; label: string; color: string; tags: string[] }[] = [
   { id: "cv", label: "Computer Vision", color: "#5ab0ff", tags: ["Detection", "Tracking", "Re-identification"] },
-  { id: "vlm", label: "Vision-Language Models", color: "#8b7cff", tags: ["Florence-2", "Qwen2-VL", "Llama 3.2 Vision"] },
-  { id: "llm", label: "LLMs & RAG", color: "#d07cff", tags: ["Hybrid retrieval", "Intent classification", "STT / TTS"] },
+  { id: "vlm", label: "Vision-Language Models", color: "#8b7cff", tags: ["Florence-2", "Qwen2-VL", "Llama 3.2 Vision", "OCR"] },
+  { id: "llm", label: "LLMs & RAG", color: "#d07cff", tags: ["Hybrid retrieval", "Semantic search", "Intent classification", "STT / TTS"] },
   { id: "autonomy", label: "Autonomous Systems", color: "#ffb547", tags: ["Sonar", "Near-infrared", "AUVs & ASVs"] },
   { id: "science", label: "ML for Science", color: "#4fd1a5", tags: ["Gaussian Processes", "XGBoost", "LOOCV"] },
 ];
@@ -62,8 +62,8 @@ export const experience: Experience[] = [
     org: "LFOVIA Lab, IIT Hyderabad",
     period: "Sep 2024 – Jul 2025",
     summary:
-      "Evaluated and fine-tuned vision-language models (Florence-2 Base/Large, Llama 3.2 Vision and Qwen2-VL) for multimodal text-image understanding, and benchmarked task-specific models including RetinaFace, DeepFace and Siamese architectures for targeted detection, face analysis and visual tracking / re-identification.",
-    tags: ["VLMs", "Fine-tuning", "Face analysis", "Re-identification"],
+      "Evaluated and fine-tuned vision-language models (Florence-2 Base/Large, Llama 3.2 Vision and Qwen2-VL) for multimodal text-image understanding and text recognition (OCR), and benchmarked task-specific models including RetinaFace, DeepFace and Siamese architectures for targeted detection, face analysis and visual tracking / re-identification.",
+    tags: ["VLMs", "Fine-tuning", "OCR", "Face analysis", "Re-identification"],
     areas: ["vlm", "cv"],
   },
   {
@@ -119,7 +119,7 @@ export const projects: Project[] = [
     ],
     result:
       "Low-latency customer-care interactions across channels, with an 18% improvement in answer relevance on customer data.",
-    tech: ["LLMs", "Hybrid RAG", "STT / TTS", "Intent classification", "Python"],
+    tech: ["LLMs", "Hybrid RAG", "Semantic search", "STT / TTS", "Intent classification", "Python"],
     areas: ["llm"],
     planet: { from: "#e3a8ff", to: "#5b2a9e", ring: "#d07cff" },
   },
@@ -134,10 +134,11 @@ export const projects: Project[] = [
       "Evaluated VLMs on object detection, segmentation, age & gender classification, crowd analysis and action recognition",
       "Curated and annotated RGB and depth datasets with structured preprocessing, labeling and quality validation",
       "Benchmarked and fine-tuned models in Python pipelines using precision / recall and IoU",
+      "Fine-tuned and evaluated the VLMs for text recognition (OCR), reading text directly from images",
     ],
     result:
       "A standardized evaluation pipeline comparing VLMs with conventional detectors, with more consistent training data and more scalable, efficient data processing.",
-    tech: ["Florence-2", "Qwen2-VL", "Llama 3.2 Vision", "PyTorch", "RGB-D"],
+    tech: ["Florence-2", "Qwen2-VL", "Llama 3.2 Vision", "OCR", "PyTorch", "RGB-D"],
     areas: ["vlm", "cv"],
     planet: { from: "#b9c6ff", to: "#2b2f9e" },
   },
@@ -176,10 +177,11 @@ export const projects: Project[] = [
       "Benchmarked Linear Regression, Random Forest, XGBoost and Gaussian Process Regression",
       "One-hot feature engineering and leave-one-out cross-validation for small-data generalization",
       "Feature-importance analysis and a study of extrapolation and confounding limits",
+      "Recently adopted the RRSI technique to rigorously verify that model improvements are real, not noise",
     ],
     result:
       "Gaussian Process Regression reached cross-validated R² up to 0.996 across six outputs (CH₄ conversion, H₂ and C₂–C₄ selectivities), pointing to Bayesian Optimization for experiment-guided tuning.",
-    tech: ["Gaussian Processes", "XGBoost", "Random Forest", "scikit-learn", "LOOCV"],
+    tech: ["Gaussian Processes", "XGBoost", "Random Forest", "scikit-learn", "LOOCV", "RRSI"],
     areas: ["science"],
     planet: { from: "#ffd59a", to: "#a1461f" },
   },
@@ -243,12 +245,12 @@ export const skills: { group: string; color: string; items: string[] }[] = [
   {
     group: "VLMs",
     color: "#8b7cff",
-    items: ["Florence-2", "Qwen2-VL", "Llama 3.2 Vision", "Multimodal data"],
+    items: ["Florence-2", "Qwen2-VL", "Llama 3.2 Vision", "OCR / text recognition", "Multimodal data"],
   },
   {
     group: "LLMs",
     color: "#d07cff",
-    items: ["Transformers", "LLM fine-tuning", "RAG", "Hybrid retrieval", "Intent classification", "STT / TTS"],
+    items: ["Transformers", "LLM fine-tuning", "RAG", "Hybrid retrieval", "Semantic search", "Intent classification", "STT / TTS"],
   },
 ];
 
