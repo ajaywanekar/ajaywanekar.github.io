@@ -122,7 +122,7 @@ export function Recognition() {
   return (
     <section id="recognition" className={section}>
       <div className={container}>
-        <SectionHeading index="05" eyebrow="Recognition" title={<ScrambleText text="Published & awarded" />} />
+        <SectionHeading index="06" eyebrow="Recognition" title={<ScrambleText text="Published & awarded" />} />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           {publications.map((p) => (
             <article
@@ -185,7 +185,7 @@ export function Toolkit() {
   return (
     <section id="toolkit" className={section}>
       <div className={container}>
-        <SectionHeading index="06" eyebrow="Toolkit" title={<ScrambleText text="Tools of the trade" />} />
+        <SectionHeading index="07" eyebrow="Toolkit" title={<ScrambleText text="Tools of the trade" />} />
         <SkillSphere />
       </div>
     </section>
@@ -199,7 +199,7 @@ export function Now() {
         <div className="relative overflow-hidden rounded-3xl border border-line bg-glass p-8 backdrop-blur-sm sm:p-12">
           <Planet from="#9fc2ff" to="#1c2f7a" ring="#7aa7ff" className="absolute -right-16 -bottom-20 w-64 opacity-40 sm:w-80" />
           <p className="relative font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
-            <span className="text-faint">07 /</span> Now <span className="text-faint">· updated {now.updated}</span>
+            <span className="text-faint">08 /</span> Now <span className="text-faint">· updated {now.updated}</span>
           </p>
           <p className="relative mt-6 max-w-3xl font-serif text-3xl leading-[1.15] sm:text-5xl">{now.statement}</p>
           <ul className="relative mt-8 space-y-3">
@@ -224,7 +224,7 @@ export function Beyond() {
     <section id="beyond" className={section}>
       <div className={container}>
         <SectionHeading
-          index="08"
+          index="09"
           eyebrow="Beyond the lab"
           title={<ScrambleText text="Curiosity, off the clock" />}
           aside={<p className="max-w-xs text-sm leading-relaxed text-muted">{beyond.statement}</p>}
@@ -259,7 +259,7 @@ export function Contact() {
     <section id="contact" className={section}>
       <div className={`${container} flex flex-col items-center text-center`}>
         <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">
-          <span className="text-faint">09 /</span> Contact
+          <span className="text-faint">10 /</span> Contact
         </p>
         <h2 className="mt-4 font-serif text-7xl leading-none sm:text-9xl">
           <ScrambleText text="Let's talk." />
