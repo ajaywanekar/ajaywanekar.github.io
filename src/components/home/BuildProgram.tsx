@@ -16,7 +16,39 @@ const stats = [
   { value: "4", label: "channels synced on one platform" },
   { value: "5", label: "people in the team I led" },
   { value: "+18%", label: "answer relevance from hybrid retrieval" },
-  { value: "1", label: "working prototype, built from an idea" },
+];
+
+const leadership = [
+  {
+    trait: "Initiative",
+    claim: "I take the first step.",
+    proof: "Nobody handed me this problem. I spotted it, proposed the idea, and started building before anyone asked.",
+  },
+  {
+    trait: "Leadership",
+    claim: "I lead people, not just tasks.",
+    proof: "Brought together a team of five, gave each person a clear workstream they owned, and kept everyone moving toward one prototype.",
+  },
+  {
+    trait: "Teamwork",
+    claim: "I make the team stronger than its parts.",
+    proof: "Voice, email, chat and knowledge were built in parallel, with regular check-ins so every piece fit together.",
+  },
+  {
+    trait: "Ownership",
+    claim: "I make the call, and I own it.",
+    proof: "Decided the architecture and which models to use, backed by side-by-side comparisons, and stood by the results.",
+  },
+  {
+    trait: "Courage",
+    claim: "I am not afraid to start something hard.",
+    proof: "Took on an unproven idea as a student, in a field with large established players, and carried it to a working prototype.",
+  },
+  {
+    trait: "Confidence",
+    claim: "I speak up and carry the room.",
+    proof: "Explained the idea to users and mentors, presented progress to the program, and demoed the prototype live.",
+  },
 ];
 
 const capabilities = [
@@ -118,7 +150,7 @@ export function BuildProgram() {
         </div>
 
         {/* Headline numbers */}
-        <dl className="mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-line bg-line lg:grid-cols-4">
+        <dl className="mt-16 grid gap-px overflow-hidden rounded-3xl border border-line bg-line sm:grid-cols-3">
           {stats.map((s) => (
             <div key={s.label} className="bg-space p-6 sm:p-8">
               <dt className="font-serif text-5xl leading-none sm:text-6xl">{s.value}</dt>
@@ -148,6 +180,34 @@ export function BuildProgram() {
             </li>
           ))}
         </ol>
+
+        {/* The kind of person who leads this: short claims, each backed by what happened. */}
+        <div className="relative mt-16 overflow-hidden rounded-3xl border border-line bg-glass p-6 backdrop-blur-sm sm:p-8">
+          <div
+            className="pointer-events-none absolute -top-32 -left-32 size-96 rounded-full opacity-50 blur-3xl"
+            style={{ background: "radial-gradient(circle, rgb(122 167 255 / 0.25), transparent 65%)" }}
+          />
+          <div className="relative flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <h3 className="font-serif text-3xl leading-tight sm:text-4xl">
+              Give me a problem. <span className="text-accent">I&apos;ll bring the team</span> and the plan.
+            </h3>
+            <p className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent sm:pb-1.5">What leading it proved</p>
+          </div>
+
+          <ol className="relative mt-6 grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-3">
+            {leadership.map((l, i) => (
+              <li key={l.trait} className="group bg-space/90 p-5">
+                <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-faint">
+                  <span className="text-accent">{String(i + 1).padStart(2, "0")}</span> · {l.trait}
+                </p>
+                <h4 className="mt-2 font-serif text-2xl leading-tight transition-colors duration-300 group-hover:text-accent">
+                  {l.claim}
+                </h4>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{l.proof}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );
