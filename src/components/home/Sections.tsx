@@ -159,7 +159,7 @@ export function Recognition() {
           ))}
           {achievements.map((a) => (
             <article key={a.event} className="flex flex-col rounded-2xl border border-line bg-glass p-6 backdrop-blur-sm">
-              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">Hackathon</p>
+              <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-accent">{a.kind ?? "Hackathon"}</p>
               <h3 className="mt-4 font-serif text-4xl leading-none">{a.title}</h3>
               <p className="mt-3 text-sm text-muted">{a.event}</p>
               {a.url && (

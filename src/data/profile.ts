@@ -220,7 +220,8 @@ export const publications: Publication[] = [
   },
 ];
 
-export const achievements: { title: string; event: string; url?: string; urlLabel?: string }[] = [
+// `kind` is the small label on the card (defaults to "Hackathon").
+export const achievements: { title: string; event: string; url?: string; urlLabel?: string; kind?: string }[] = [
   {
     title: "Top 10, All India",
     event: "Meta × Pragati AI Hackathon",
@@ -228,6 +229,13 @@ export const achievements: { title: string; event: string; url?: string; urlLabe
     urlLabel: "View announcement",
   },
   { title: "2nd Place", event: "AI and X Hackathon, IIT Hyderabad" },
+  {
+    kind: "Certification",
+    title: "Japanese",
+    event: "Learn to Read and Write in Japanese: From Zero to Hero (Udemy, November 2026)",
+    url: "https://ude.my/UC-4fef3161-6be4-4fba-8272-64a692969c69",
+    urlLabel: "View certificate",
+  },
 ];
 
 export const skills: { group: string; color: string; items: string[] }[] = [
@@ -255,13 +263,14 @@ export const skills: { group: string; color: string; items: string[] }[] = [
 ];
 
 export const now = {
-  updated: "October 2026",
+  updated: "November 2026",
   statement:
     "Exploring how vision-language models and agentic systems can give autonomous systems and edge AI a higher-level, semantic understanding of the world.",
   items: [
     "Completing my M.Tech thesis on ML-guided reactor optimization at IIT Hyderabad",
     "Building with agentic AI: systems that perceive, reason and act",
     "Looking at how multimodal models can run closer to the edge",
+    "Learning Japanese: certified in reading and writing Japanese (Udemy, November 2026)",
   ],
 };
 
