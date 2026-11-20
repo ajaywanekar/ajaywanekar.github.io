@@ -276,6 +276,12 @@ export const now = {
 
 // "Beyond the lab": personal photos shown last on the home page, after all professional sections.
 // Photos live in public/life (cropped, resized, metadata stripped).
+// Japanese certificate, shown with the "Learning Japan" photos on the home page and company pages.
+export const japaneseCert = {
+  text: "Certified: Learn to Read and Write in Japanese, From Zero to Hero (Udemy, November 2026).",
+  url: "https://ude.my/UC-4fef3161-6be4-4fba-8272-64a692969c69",
+};
+
 export const beyond = {
   statement:
     "Curiosity does not stop when the lab closes. I build things for fun, learn from people who have gone further than me, and I am deeply curious about Japan, its language and its design.",

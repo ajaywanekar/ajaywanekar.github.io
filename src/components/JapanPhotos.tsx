@@ -1,6 +1,18 @@
-import { beyond } from "@/data/profile";
+import { beyond, japaneseCert } from "@/data/profile";
 
 const label = "font-mono text-[11px] uppercase tracking-[0.25em]";
+
+/** One line about the Japanese certificate, with a link to verify it. */
+export function CertNote({ className = "" }: { className?: string }) {
+  return (
+    <p className={`text-sm leading-relaxed text-muted ${className}`}>
+      {japaneseCert.text}{" "}
+      <a href={japaneseCert.url} target="_blank" rel="noopener" className="text-accent underline-offset-4 hover:underline">
+        View certificate ↗
+      </a>
+    </p>
+  );
+}
 
 /** "Learning Japan" photos for the company pages, shared with the home page's Beyond the lab section. */
 export function JapanPhotos({ index }: { index: string }) {
@@ -9,10 +21,11 @@ export function JapanPhotos({ index }: { index: string }) {
     <section className="mt-24">
       <p className={`${label} text-accent`}>{index}</p>
       <h2 className="mt-3 mb-4 font-serif text-4xl leading-tight sm:text-6xl">Learning Japan</h2>
-      <p className="mb-10 max-w-2xl text-lg leading-relaxed text-muted">
+      <p className="mb-3 max-w-2xl text-lg leading-relaxed text-muted">
         Japan is not only where I want to work. I am learning the language step by step, and I enjoy its culture and
         design.
       </p>
+      <CertNote className="mb-10" />
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-6">
         {photos.map((ph, i) => (
           <figure
@@ -43,6 +56,7 @@ export function CuriosityPhotos({ index }: { index: string }) {
           <div key={g.title}>
             <p className={`${label} text-accent`}>{g.label}</p>
             <h3 className="mt-2 mb-6 font-serif text-3xl leading-tight sm:text-4xl">{g.title}</h3>
+            {g.title === "Learning Japan" && <CertNote className="-mt-3 mb-6" />}
             <div className={`grid gap-4 sm:grid-cols-2 ${gridCols[g.photos.length] ?? "lg:grid-cols-3"}`}>
               {g.photos.map((ph, i) => (
                 <figure

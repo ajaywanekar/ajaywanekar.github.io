@@ -45,7 +45,7 @@ const vlms = { value: "3", label: "vision-language models evaluated and fine-tun
 const japanese = {
   need: "Studying Japanese",
   level: "solid" as const,
-  proof: "Studying Japanese fast as a quick learner; already know English, Hindi and Marathi",
+  proof: "Certified in reading and writing Japanese (Udemy, November 2026) and studying further; already know English, Hindi and Marathi",
 };
 const python = { need: "Python, PyTorch, TensorFlow", level: "strong" as const, proof: "Daily tools across every project" };
 
@@ -127,7 +127,7 @@ export const gse: Company = {
   intro: `${opener} I have built a multilingual conversational AI platform and worked with document-reading models. I also come from India and speak Marathi, Hindi and English, so I would like to help GSE support Hamamatsu's manufacturers and the foreign workers who join them.`,
   mailSubject: "AI and India support at GSE",
   planet: { from: "#9df0c8", to: "#0f5a48", ring: "#ffd28a" },
-  stats: [years, relevance, vlms, { value: "4", label: "languages: English, Hindi, Marathi and basic Japanese" }],
+  stats: [years, relevance, vlms, { value: "4", label: "languages: English, Hindi, Marathi and certified basic Japanese" }],
   requirements: [
     { need: "Multilingual chat and voice systems", level: "strong", proof: "Multi-tenant platform unifying voice, chat and email with STT / TTS" },
     { need: "Answering questions from reference documents", level: "strong", proof: "Hybrid retrieval and LLM pipeline, +18% answer relevance" },

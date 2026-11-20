@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { achievements, beyond, experience, now, projects, publications, site, type Project } from "@/data/profile";
 import { MailIcon } from "../icons";
+import { CertNote } from "../JapanPhotos";
 import { ScrambleText } from "../ScrambleText";
 import { Planet, SectionHeading, Sparkle } from "../space";
 import { Areas } from "./Areas";
@@ -234,6 +235,7 @@ export function Beyond() {
             <div key={g.title}>
               <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-accent">{g.label}</p>
               <h3 className="mt-2 mb-6 font-serif text-3xl leading-tight sm:text-4xl">{g.title}</h3>
+              {g.title === "Learning Japan" && <CertNote className="-mt-3 mb-6" />}
               <div className={`grid gap-4 sm:grid-cols-2 ${gridCols[g.photos.length] ?? "lg:grid-cols-3"}`}>
                 {g.photos.map((ph, i) => (
                   <figure
